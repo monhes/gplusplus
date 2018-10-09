@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Conversion" targetNamespace="http://tempuri.org/Conversion.xsd" xmlns:mstns="http://tempuri.org/Conversion.xsd" xmlns="http://tempuri.org/Conversion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Conversion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Conversion" msprop:Generator_UserDSName="Conversion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Conversion" msprop:Generator_TableClassName="ConversionDataTable" msprop:Generator_TableVarName="tableConversion" msprop:Generator_RowChangedName="ConversionRowChanged" msprop:Generator_TablePropName="_Conversion" msprop:Generator_RowDeletingName="ConversionRowDeleting" msprop:Generator_RowChangingName="ConversionRowChanging" msprop:Generator_RowEvHandlerName="ConversionRowChangeEventHandler" msprop:Generator_RowDeletedName="ConversionRowDeleted" msprop:Generator_RowClassName="ConversionRow" msprop:Generator_UserTableName="Conversion" msprop:Generator_RowEvArgName="ConversionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RowNum" msprop:Generator_ColumnVarNameInTable="columnRowNum" msprop:Generator_ColumnPropNameInRow="RowNum" msprop:Generator_ColumnPropNameInTable="RowNumColumn" msprop:Generator_UserColumnName="RowNum" type="xs:string" minOccurs="0" />
+              <xs:element name="Process_date" msprop:Generator_ColumnVarNameInTable="columnProcess_date" msprop:Generator_ColumnPropNameInRow="Process_date" msprop:Generator_ColumnPropNameInTable="Process_dateColumn" msprop:Generator_UserColumnName="Process_date" type="xs:string" minOccurs="0" />
+              <xs:element name="Transfer_date" msprop:Generator_ColumnVarNameInTable="columnTransfer_date" msprop:Generator_ColumnPropNameInRow="Transfer_date" msprop:Generator_ColumnPropNameInTable="Transfer_dateColumn" msprop:Generator_UserColumnName="Transfer_date" type="xs:string" minOccurs="0" />
+              <xs:element name="MATL_CODE" msprop:Generator_ColumnVarNameInTable="columnMATL_CODE" msprop:Generator_ColumnPropNameInRow="MATL_CODE" msprop:Generator_ColumnPropNameInTable="MATL_CODEColumn" msprop:Generator_UserColumnName="MATL_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" msprop:Generator_UserColumnName="ItemName" type="xs:string" minOccurs="0" />
+              <xs:element name="PackageName" msprop:Generator_ColumnVarNameInTable="columnPackageName" msprop:Generator_ColumnPropNameInRow="PackageName" msprop:Generator_ColumnPropNameInTable="PackageNameColumn" msprop:Generator_UserColumnName="PackageName" type="xs:string" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:string" minOccurs="0" />
+              <xs:element name="Supplier_Err" msprop:Generator_ColumnVarNameInTable="columnSupplier_Err" msprop:Generator_ColumnPropNameInRow="Supplier_Err" msprop:Generator_ColumnPropNameInTable="Supplier_ErrColumn" msprop:Generator_UserColumnName="Supplier_Err" type="xs:string" minOccurs="0" />
+              <xs:element name="Pack_Content" msprop:Generator_ColumnVarNameInTable="columnPack_Content" msprop:Generator_ColumnPropNameInRow="Pack_Content" msprop:Generator_ColumnPropNameInTable="Pack_ContentColumn" msprop:Generator_UserColumnName="Pack_Content" type="xs:string" minOccurs="0" />
+              <xs:element name="PackName_Base" msprop:Generator_ColumnVarNameInTable="columnPackName_Base" msprop:Generator_ColumnPropNameInRow="PackName_Base" msprop:Generator_ColumnPropNameInTable="PackName_BaseColumn" msprop:Generator_UserColumnName="PackName_Base" type="xs:string" minOccurs="0" />
+              <xs:element name="MATL_CODE_err" msprop:Generator_ColumnVarNameInTable="columnMATL_CODE_err" msprop:Generator_ColumnPropNameInRow="MATL_CODE_err" msprop:Generator_ColumnPropNameInTable="MATL_CODE_errColumn" msprop:Generator_UserColumnName="MATL_CODE_err" type="xs:string" minOccurs="0" />
+              <xs:element name="PackageName_err" msprop:Generator_ColumnVarNameInTable="columnPackageName_err" msprop:Generator_ColumnPropNameInRow="PackageName_err" msprop:Generator_ColumnPropNameInTable="PackageName_errColumn" msprop:Generator_UserColumnName="PackageName_err" type="xs:string" minOccurs="0" />
+              <xs:element name="Pack_Content_err" msprop:Generator_ColumnVarNameInTable="columnPack_Content_err" msprop:Generator_ColumnPropNameInRow="Pack_Content_err" msprop:Generator_ColumnPropNameInTable="Pack_Content_errColumn" msprop:Generator_UserColumnName="Pack_Content_err" type="xs:string" minOccurs="0" />
+              <xs:element name="PackName_Base_err" msprop:Generator_ColumnVarNameInTable="columnPackName_Base_err" msprop:Generator_ColumnPropNameInRow="PackName_Base_err" msprop:Generator_ColumnPropNameInTable="PackName_Base_errColumn" msprop:Generator_UserColumnName="PackName_Base_err" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,144 @@
+﻿
+.modalPage3
+{
+    display: none;
+    position :fixed;  /*กำหนดให้ popup ผูกกับ container คือ browser windows*/
+    width: 100%;
+    height: 100%;
+    margin-top: 0px; left: 0px;
+    
+}
+
+.modalBackground3
+{
+    filter: Alpha(Opacity=40); 
+    -moz-opacity:0.4;
+    opacity: 0.4;
+    width: 100%; height: 100%;
+    background-color: #999999;
+    position: absolute;
+    z-index: 500;
+    top: 0px; left: 0px;
+}
+.modalContainer3
+{
+    position: absolute;
+    width: 400px;
+    left: 43%;
+    top: 55%;
+    z-index: 750;
+}
+
+.modal3
+{
+    background-color: white;
+    border: solid 4px black; 
+    position: relative;
+    top: -150px;
+    left: -150px;
+    z-index: 1000;
+    /*width: 100%;
+    height: 100%;*/
+    padding: 0px;
+}
+
+.modalTop3
+{
+    width: 367px;
+    background-color: #ffffff;
+    padding: 4px;
+    color: #ffffff;
+    text-align: right;
+}
+
+
+.modalTop3 a, .modalTop3 a:visited
+{
+    color: #ffffff;
+}
+
+
+
+
+.modalBody3
+{
+    padding: 10px;
+    width: 375px;
+    height: 200px;
+    overflow: auto;
+	overflow-x: hidden;
+	border-width:thin;
+}
+
+
+.modalPage2
+{
+    display: none;
+    position :fixed;  /*กำหนดให้ popup ผูกกับ container คือ browser windows*/
+    width: 100%;
+    height: 100%;
+    margin-top: 0px; left: 0px;
+    
+}
+
+
+.modalBackground2
+{
+    filter: Alpha(Opacity=40); 
+    -moz-opacity:0.4;
+    opacity: 0.4;
+    width: 100%; height: 100%;
+    background-color: #999999;
+    position: absolute;
+    z-index: 500;
+    top: 0px; left: 0px;
+}
+.modalContainer2
+{
+    position: absolute;
+    width: 850px;
+    left: 28%;
+    top: 50%;
+    z-index: 750;
+}
+
+.modal2
+{
+    background-color: white;
+    border: solid 4px black; 
+    position: relative;
+    top: -150px;
+    left: -150px;
+    z-index: 1000;
+    /*width: 100%;
+    height: 100%;*/
+    padding: 0px;
+}
+
+.modalTop2
+{
+    width: 827px;
+    background-color: #ffffff;
+    padding: 4px;
+    color: #ffffff;
+    text-align: right;
+}
+
+
+.modalTop2 a, .modalTop2 a:visited
+{
+    color: #ffffff;
+}
+
+
+
+
+.modalBody2
+{
+    padding: 10px;
+    width: 825px;
+    height: 400px;
+    overflow: auto;
+	overflow-x: hidden;
+	border-width:thin;
+}

@@ -1,0 +1,135 @@
+﻿html, body
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 9pt;
+}
+.accordionHeader
+{
+	width: 196px;
+	height: 31px;
+	background-image: url(../Images/Stock/MenuRight.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+	color: #19436C;
+	font-weight: bold;
+	font-size: 15pt;
+	padding-left: 15px;
+	padding-top: 5px;
+}
+.accordionHeaderSelected
+{
+	background-image: url(../Images/Stock/MenuRight_over.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+	color: #EC467E;
+	width: 196px;
+	height: 31px;
+	font-size: 15pt;
+	font-weight: bold;
+	padding-left: 15px;
+	padding-top: 5px;
+}
+.accordionContent
+{
+	background-color: #EAEAEA;
+	border-top: none;
+	margin-left: 8px;
+	margin-right: 20px;
+	margin-bottom: 2px;
+	padding-left: 3px;
+	border: 1px solid #C7C6C5;
+}
+.tableHeader
+{
+	height: 29px;
+	background-image: url(../Images/Stock/box_data_head.png);
+	background-repeat: no-repeat;
+	padding-left: 10px;
+	font-weight: bold;
+	color: #EC467E;
+}
+.tableBody
+{
+	background-image: url(../Images/Stock/box_data_body.png);
+	background-repeat: repeat-y;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+}
+.tableFooter
+{
+	background-image: url(../Images/Stock/box_data_foot.png);
+	background-repeat: no-repeat;
+	height: 12px;
+}
+.GridHeader
+{
+	background-image: url(../Images/Stock/grid_header.png);
+	background-repeat: repeat-x;
+	height: 39px;
+}
+
+.GridHeader2
+{
+    background-color: #3A8FE3;
+}
+
+.GridHeader3
+{
+    background-color: #979290;
+    height: 25px;
+}
+
+
+.modalBackground {
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+
+.modalPopup {
+	background-color:#ffffdd;
+	border-width:3px;
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:250px;
+}
+
+
+.autocomplete_completionListElement 
+{  
+	visibility : hidden;
+	margin : 0px!important;
+	padding: 0px 0px 0px 0px;
+	background-color : inherit;
+	color : windowtext;
+	border : buttonshadow;
+	border-width : 1px;
+	border-style : solid;
+	cursor : 'default';
+	overflow : auto;
+	height : 200px;
+    text-align : left; 
+    list-style-type : none;
+}
+
+/* AutoComplete highlighted item */
+
+.autocomplete_highlightedListItem
+{
+	background-color: #ffff99;
+	color: black;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+
+.autocomplete_listItem 
+{
+	background-color : window;
+	color : windowtext;
+	padding : 1px;
+}

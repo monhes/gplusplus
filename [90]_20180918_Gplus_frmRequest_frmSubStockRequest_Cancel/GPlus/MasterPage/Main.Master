@@ -1,0 +1,260 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="GPlus.MasterPage.Main" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title></title>
+    <script src="../Script/custom.js" type="text/javascript"></script>
+    <link href="../Script/default.css" rel="stylesheet" type="text/css" />
+
+    <link  href="../themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../themes/smoothness/jquery-ui.css"  type="text/css" />
+    <link rel="stylesheet" href="../css/demos.css"  type="text/css" />
+
+
+    <script src="../Script/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../Script/jquery-1.7.2.js" type="text/javascript"></script>
+
+    <script src="../js/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+
+    <%--<script src="../autocomplete.asmx/js" type="text/javascript"></script>--%>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input").not($(":button")).keypress(function (evt) {
+                if (evt.keyCode == 13) {
+                    iname = $(this).val();
+                    if (iname !== 'Submit') {
+                        var fields = $(this).parents('form:eq(0),body').find('button,input,textarea,select');
+                        var index = fields.index(this);
+                        if (index > -1 && (index + 1) < fields.length) {
+                            fields.eq(index + 1).focus();
+                        }
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-image: url(../Images/Stock/bg.jpg); padding-top: 7px;">
+    <form id="form1" runat="server">
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1">
+        <%--<Services>
+            <asp:ServiceReference Path="~/autocomplete.asmx" />
+        </Services>--%>
+    </ajaxToolkit:ToolkitScriptManager>
+    <center>
+        <table width="1002" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="width: 201px;" align="left" valign="middle">
+                    <img src="../images/logo_Muangthai.png" />
+                </td>
+                <td>
+                    &nbsp;&nbsp;
+                </td>
+                <td style="width: 799px;" align="right" valign="middle">
+                    <img src="../images/logo_gplus.png" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2" align="right" style="font-size:11pt;">
+                    ยินดีต้อนรับ คุณ <asp:Label ID="lblUser" runat="server"></asp:Label>
+                    &nbsp;<asp:HyperLink ID="hplLogout" runat="server" Text="ออกจากระบบ" NavigateUrl="~/Default.aspx"></asp:HyperLink>
+                </td>
+            </tr>
+            <tr align="left" valign="top">
+                <td>
+                    <ajaxToolkit:Accordion ID="MyAccordion" runat="server" SelectedIndex="0" HeaderCssClass="accordionHeader"
+                        HeaderSelectedCssClass="accordionHeaderSelected" ContentCssClass="accordionContent"
+                        FadeTransitions="false" FramesPerSecond="40" TransitionDuration="250" AutoSize="None"
+                        RequireOpenedPane="false" SuppressHeaderPostbacks="true" ForeColor="#19436C">
+                        <Panes>
+                            <ajaxToolkit:AccordionPane ID="AccordionPane1" runat="server">
+                                <Header>ข้อมูลพื้นฐาน</Header>
+                                <Content>
+                                    <asp:Menu ID="mnu1" runat="server" >
+                                        <Items>
+                                            <asp:MenuItem Text="ข้อมูลวัสดุอุปกรณ์" Value="101" NavigateUrl="~/MasterData/MaterialMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="หน่วยบรรจุ" Value="102" NavigateUrl="~/MasterData/PackageMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ข้อมูลราคาวัสดุอุปกรณ์" Value="103" NavigateUrl="~/MasterData/MaterialPrice.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ประเภทอุปกรณ์" Value="104" NavigateUrl="~/MasterData/MaterialType.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ประเภทอุปกรณ์ย่อย" Value="105" NavigateUrl="~/MasterData/SubMeterialType.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ชนิดรายการวัสดุอุปกรณ์" Value="106" NavigateUrl="~/MasterData/FormMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="กลุ่มผู้ใช้งานวัสดุอุปกรณ์" Value="107" NavigateUrl="~/MasterData/TypeMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ระดับคลังสินค้า" Value="108" NavigateUrl="~/MasterData/StockLevel.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="คลังสินค้า" Value="109" NavigateUrl="~/MasterData/TreasuryMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="Supplier" Value="110" NavigateUrl="~/MasterData/SupplierMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                           <%-- <asp:MenuItem Text="ราคาซือจาก Supplier" Value="111" NavigateUrl="~/MasterData/SupplierPriceMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="การซื้อสินค้าจาก Supplier" Value="112" NavigateUrl="~/MasterData/SupplierBuyMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>--%>
+                                            <asp:MenuItem Text="หน่วยงาน" Value="113" NavigateUrl="~/MasterData/DepartmentMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ผู้อนุมัติหน่วยงาน" Value="114" NavigateUrl="~/MasterData/ApproverMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <%--<asp:MenuItem Text="ข้อมูลงบประมาณหน่วยงาน" Value="115" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>--%>
+                                            <asp:MenuItem Text="ข้อมูลหมวดรายจ่าย" Value="116" NavigateUrl="~/MasterData/ExpensesMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ข้อมูลบัญชีค่าใช้จ่าย" Value="117" NavigateUrl="~/MasterData/AccountMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ข้อมูลโครงการ" Value="118" NavigateUrl="~/MasterData/ProjectMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ผู้ใช้งาน" Value="119" NavigateUrl="~/MasterData/UserMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="กลุ่มผู้ใช้งาน" Value="120" NavigateUrl="~/MasterData/UserGroupMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="กำหนด Reorder Point" Value="121" NavigateUrl="~/PRPO/ReorderPointMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="สถานที่จัดเก็บสินค้า" Value="122" NavigateUrl="~/MasterData/StockLocation.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ปฏิทินของตารางการจ่ายสินค้า" Value="123" NavigateUrl="~/MasterData/CalendarPayGoodsTable.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ประเภทการรับเข้า - จ่ายออกกรณีอื่นๆ" Value="124" NavigateUrl="~/MasterData/InOutStkMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ฝ่ายเจ้าของแต่ละประเภทวัสดุ-อุปกรณ์" Value="125" NavigateUrl="~/MasterData/TypeRequisitionMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+
+                                            <asp:MenuItem Text="การกำหนดสิทธิ์ผู้ใช้" Value="126" NavigateUrl="~/MasterData/StockAccMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ชั้น" Value="127" NavigateUrl="~/MasterData/BuildingFloorMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="อาคาร" Value="128" NavigateUrl="~/MasterData/BuildingMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="จังหวัด" Value="129" NavigateUrl="~/MasterData/ProvinceMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="อำเภอ" Value="130" NavigateUrl="~/MasterData/AmphurMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ตำบล" Value="131" NavigateUrl="~/MasterData/TumbonMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                        </Items>
+                                    </asp:Menu>
+                                </Content>
+                            </ajaxToolkit:AccordionPane>
+                            <ajaxToolkit:AccordionPane ID="AccordionPane2" runat="server">
+                                <Header>
+                                    ขอซื้อ - ขอจ้าง</Header>
+                                <Content>
+                                    <asp:Menu ID="mnu2" runat="server">
+                                        <Items>
+                                            <asp:MenuItem Text="ข้อมูลการขอซื้อ (PR)" Value="201" NavigateUrl="~/PRPO/PRMgt.aspx"  SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="อนุมัติขอซื้อ" Value="202" NavigateUrl="~/PRPO/PRApproveMgt.aspx" ></asp:MenuItem>
+                                           <%-- <asp:MenuItem Text="ราคาซือจาก Supplier" Value="203" NavigateUrl="~/PRPO/SupplierPriceMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="การซื้อสินค้าจาก Supplier" Value="204" NavigateUrl="~/PRPO/SupplierBuyMgt.aspx" ></asp:MenuItem>--%>
+                                        </Items>
+                                    </asp:Menu>
+                                </Content>
+                            </ajaxToolkit:AccordionPane>
+                            <ajaxToolkit:AccordionPane ID="AccordionPane3" runat="server">
+                                <Header>จัดซื้อ - จัดจ้าง</Header>
+                                <Content>
+                                    <asp:Menu ID="mnu3" runat="server">
+                                        <Items>
+                                            <asp:MenuItem Text="ออกใบสั่งซื้อ(PO)" Value="301" NavigateUrl="~/PRPO/POMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="อนุมัติสั่งซื้อ(PO)" Value="302" NavigateUrl="~/PRPO/POApproveMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ราคาซือจาก Supplier" Value="303" NavigateUrl="~/PRPO/SupplierPriceMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="การซื้อสินค้าจาก Supplier" Value="304" NavigateUrl="~/PRPO/SupplierBuyMgt.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ตรวจประวัติการสั่งซื้อ/สังจ้าง" Value="305" NavigateUrl="~/PRPO/POSearch.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                           <%-- <asp:MenuItem Text="สอบถามการรับสินค้าเข้าจาก PO" Value="306" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>--%>
+                                           <%-- <asp:MenuItem Text="รายงานการสั่งซื้อเพิ่ม" Value="307" NavigateUrl="~/PRPO/ReorderPointReport.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>--%>
+                                            <asp:MenuItem Text="รายงานการสั่งซื้อเพิ่ม" Value="310" NavigateUrl="~/PRPO/ReorderPointPurchaseReport.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                           <%-- <asp:MenuItem Text="รายงานจำนวนสินค้าคงเหลือ" Value="308" NavigateUrl="~/PRPO/ReportStockOnHand.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>--%>
+                                            <asp:MenuItem Text="รายงานแสดงรายการสินค้าที่ค้างรับ" Value="309" NavigateUrl="~/PRPO/ReportRemainingPO.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงานแสดงยอดการสั่งซื้อสินค้า" Value="311" NavigateUrl="~/PRPO/ReportOrderPO.aspx"></asp:MenuItem>
+                                        </Items>
+                                    </asp:Menu>
+                                </Content>
+                            </ajaxToolkit:AccordionPane>
+                            <ajaxToolkit:AccordionPane ID="AccordionPane4" runat="server">
+                                <Header>คลังสินค้า</Header>
+                                <Content>
+                                    <asp:Menu ID="mnu4" runat="server">
+                                        <Items>
+                                            <asp:MenuItem Text="บันทึกรับของเข้าคลัง" Value="401" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="../Stock/StockReceiverForm.aspx"></asp:MenuItem>
+                                            <%--<asp:MenuItem Text="บันทึกรับการแตก Pack สินค้า" Value="402" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="../Stock/PackDistribute.aspx"></asp:MenuItem>--%>
+                                            <%--<asp:MenuItem Text="บันทึกคืนสินค้าไปยังผู้จำหน่วย" Value="402" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="../Stock/STOCK_REC.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="บันทึกรับคืนสินค้าจากผู้จำหน่าย" Value="403" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="บันทึกการชำรุด" Value="404" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            --%>
+                                            <asp:MenuItem Text="รับของเข้ากรณีอื่นๆ" Value="405" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="~/Other/ReceiveOther.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="จ่ายออกกรณีอื่น ๆ" Value="406" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="~/Other/PayOther.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงานจำนวนสินค้าคงเหลือ" Value="416" NavigateUrl="~/PRPO/ReportStockOnHand.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงานจำนวนสินค้าคงเหลือที่เคลื่อนไหวน้อย" Value="423" SeparatorImageUrl="../Images/menu_separate.png"  NavigateUrl="~/Stock/ReportStockGoodUnMoving.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="ความเคลื่อนไหวของสินค้าคงคลัง" Value="407" SeparatorImageUrl="../Images/menu_separate.png"  NavigateUrl="~/Stock/MgtStockCardMovment.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="Inventory Edit Listing" Value="422" SeparatorImageUrl="../Images/menu_separate.png"  NavigateUrl="~/Stock/InvEditListingReport.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="ข้อมูล Set Stock และตรวจนับ" Value="408" SeparatorImageUrl="../Images/menu_separate.png"   NavigateUrl="../Stock/SetStock.aspx"></asp:MenuItem>
+                                            <%--<asp:MenuItem Text="คลังย่อยเบิกวัสดุ - อุปกรณ์" Value="409" SeparatorImageUrl="../Images/menu_separate.png" ></asp:MenuItem>--%>
+                                           <%-- <asp:MenuItem Text="อนุมัติเบิกวัสดุ- อุปกรณ์ระหว่างคลัง" Value="410" SeparatorImageUrl="../Images/menu_separate.png" ></asp:MenuItem>--%>
+                                            <asp:MenuItem Text="การจ่ายวัสดุ - อุปกรณ์" Value="411" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="~/PRPO/RoutineStock.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="ตารางจ่าย" Value="412" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="../Stock/frmDistribute.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="ประมวลผลปิดStock Cardประจำเดือน" Value="413" NavigateUrl="~/Stock/MgtStockCardMonthlyClose.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงาน Stock Card" Value="414"  NavigateUrl="~/Stock/StockCardReport.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงานสรุปรายการรับ – เบิก ประจำวัน" Value="415" NavigateUrl="~/PRPO/ReceiveAndWithdrawDailyReport.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงานสรุปรายการรับเข้า – จ่ายออกสินค้ากรณีอื่นๆ" Value="417" NavigateUrl="~/Stock/ReceiveAndWithdrawCaseOtherReport.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงานสรุปค่าใช้จ่ายแยกตามฝ่ายเจ้าของ" Value="418" NavigateUrl="~/Stock/PayReport.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ยอดสินค้าคงเหลือโรงพิมพ์" Value="419" NavigateUrl="~/Stock/SupplierMTL_Balance.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <%--<asp:MenuItem Text="รายงานการเบิกวัสดุ-อุปกรณ์ Stock Event" Value="420" NavigateUrl="~/Stock/StockEventReport.aspx" ></asp:MenuItem>--%>
+                                            <asp:MenuItem Text="คลังย่อยเบิกสินค้า" Value="421" NavigateUrl="~/Request/frmSubStockRequest.aspx"></asp:MenuItem>
+                                            <%--<asp:MenuItem Text="การเบิกสินค้า" Value="422" NavigateUrl="~/ReportLog/Report.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="การ" Value="423" NavigateUrl="~/ReportLog/WebForm1.aspx"></asp:MenuItem>--%>
+                                            
+                                            
+                                        </Items>
+                                    </asp:Menu>
+                                </Content>
+                            </ajaxToolkit:AccordionPane>
+                             <ajaxToolkit:AccordionPane ID="AccordionPane5" runat="server">
+                                <Header>หน่วยงาน</Header>
+                                <Content>
+                                    <asp:Menu ID="mnu5" runat="server">
+                                        <Items>
+                                            <asp:MenuItem Text="เบิกวัสดุ-อุปกรณ์" Value="501" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="../Request/frmRequest.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="อนุมัติการเบิกวัสดุ-อุปกรณ์" Value="502" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="../Request/frmRequest.aspx?approv=true"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงานการเบิกและเปรียบเทียบ" Value="503" NavigateUrl="../Request/WithdrawGoodsReport.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงานการเบิกวัสดุ-อุปกรณ์ Stock Event" Value="504" NavigateUrl="~/Request/StockEventReport.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ข้อมูลงบประมาณการจ่ายของหน่วยงาน" Value="505" NavigateUrl="~/Request/OrgBudgetMgt.aspx" ></asp:MenuItem>
+                                        </Items>
+                                    </asp:Menu>
+                                </Content>
+                            </ajaxToolkit:AccordionPane>
+                            <ajaxToolkit:AccordionPane ID="AccordionPane6" runat="server">
+                                <Header>สอบถาม</Header>
+                                <Content>
+                                    <asp:Menu ID="mnu6" runat="server">
+                                        <Items>
+                                            <%--<asp:MenuItem Text="สอบถามการเบิก-จ่าย" Value="601" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="สอบถามการคืนของ" Value="602" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="สอบถามข้อมูลการชำรุด" Value="603" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="สอบถามข้อมูลการรรับเข้ากรณีอื่นๆ" Value="604" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="สอบถามข้อมูลการรจ่ายออกกรณีอื่นๆ" Value="605" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>--%>
+                                            <asp:MenuItem Text="สอบถามสถานะการใบขอซื้อ(PR)" Value="606" SeparatorImageUrl="../Images/menu_separate.png"  NavigateUrl="~/PRPO/PRTrackingReport.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="สอบถามเกี่ยวกับใบสั่งซื้อ(PO)" Value="607" SeparatorImageUrl="../Images/menu_separate.png" NavigateUrl="~/PRPO/POTrackingReport.aspx"></asp:MenuItem>
+                                           <%-- <asp:MenuItem Text="สอบถามรายการสินค้าคงเหลือ/เคลื่อนไหว" Value="608" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>--%>
+                                            <asp:MenuItem Text="สอบถามสินค้าคงคลัง" Value="609"  NavigateUrl="~/Request/RequestStockOnHand.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="Temp" Value="610"  NavigateUrl="~/Request/Temp.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ใบเบิก" value="601" NavigateUrl="~/ReportLog/Stock_Issue_content.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="การคืนของจากหน่วยงาน" value="602" NavigateUrl="~/ReportLog/Request_Log.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ใบส่งซื้อ(PO)" value="603" NavigateUrl="~/ReportLog/PO_Log.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="รับของเข้าคลัง" value="604" NavigateUrl="~/ReportLog/Goodreceiving.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ยกเลิกรับของเข้าคลัง" value="605" NavigateUrl="~/ReportLog/Cancel_Good_Receiving_Content.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ข้อมูลวัสดุอุปกรณ์" value="606" NavigateUrl="~/ReportLog/Meterial_content.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="หน่วยบรรจุ" value="607" NavigateUrl="~/ReportLog/Conversion_content.aspx" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="ผู้ขาย(Supplier)" value="608" NavigateUrl="~/ReportLog/Supplier_content.aspx" ></asp:MenuItem>
+                                        </Items>
+                                    </asp:Menu>
+                                </Content>
+                            </ajaxToolkit:AccordionPane>
+                            <%--<ajaxToolkit:AccordionPane ID="AccordionPane7" runat="server">
+                                <Header>รายงาน/สถิติ</Header>
+                                <Content>
+                                    <asp:Menu ID="mnu7" runat="server">
+                                        <Items>
+                                            <asp:MenuItem Text="รายการสินค้าที่ค้างรับ" Value="701" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="Stock Cardยอดสรุปประจำเดือน" Value="702" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="สรุปบัญชีค่าใช้จ่าย" Value="703" SeparatorImageUrl="../Images/menu_separate.png"></asp:MenuItem>
+                                            <asp:MenuItem Text="รายงานสรุปการรับ-เบิกประจำวัน" Value="704"></asp:MenuItem>
+                                        </Items>
+                                    </asp:Menu>
+                                </Content>
+                            </ajaxToolkit:AccordionPane>--%>
+                        </Panes>
+                    </ajaxToolkit:Accordion>
+                </td>
+                <td>
+                </td>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </center>
+    </form>
+</body>
+</html>
+
+<%--Version 76_5:Created 09/05/2014 14:19--%>

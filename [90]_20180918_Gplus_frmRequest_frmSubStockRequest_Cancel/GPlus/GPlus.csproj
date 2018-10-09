@@ -1,0 +1,2600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C2B0661-03D7-4D3A-AA4A-7FA6F146B313}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPlus</RootNamespace>
+    <AssemblyName>GPlus</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60623.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Components\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicrosoftReportViewerWebForms.11.0.0.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicrosoftReportViewerWebForms.11.0.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicrosoftReportViewerWebForms.11.0.0.0\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\default.css" />
+    <Content Include="autocomplete.asmx" />
+    <Content Include="bin\CrystalDecisions.ReportAppServer.Controllers.dll" />
+    <Content Include="css\demos.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="Home\Home.aspx" />
+    <Content Include="images\application-view-list.png" />
+    <Content Include="images\arrowhl.png" />
+    <Content Include="images\arrowhr.png" />
+    <Content Include="images\arrowvb.png" />
+    <Content Include="images\arrowvt.png" />
+    <Content Include="images\box_data_body2.png" />
+    <Content Include="images\box_data_foot2.png" />
+    <Content Include="images\box_data_head2.png" />
+    <Content Include="images\button_mll.png" />
+    <Content Include="images\button_mll_over.png" />
+    <Content Include="images\calendar.gif" />
+    <Content Include="images\close.gif" />
+    <Content Include="images\close.png" />
+    <Content Include="images\Commands\ebbtcbindex1_0.gif" />
+    <Content Include="images\Commands\ebbtcbindex1_2.gif" />
+    <Content Include="images\drop1.gif" />
+    <Content Include="images\drop2.gif" />
+    <Content Include="images\iclose.gif" />
+    <Content Include="images\icon_zoom.png" />
+    <Content Include="images\image001.png" />
+    <Content Include="images\left1.gif" />
+    <Content Include="images\left2.gif" />
+    <Content Include="images\Login\new\bar.jpg" />
+    <Content Include="images\Login\new\bar.png" />
+    <Content Include="images\Login\new\bar2.jpg" />
+    <Content Include="images\Login\new\bar2.png" />
+    <Content Include="images\Login\new\cloud.jpg" />
+    <Content Include="images\Login\new\cloud1.jpg" />
+    <Content Include="images\Login\new\Login_bg.png" />
+    <Content Include="images\right1.gif" />
+    <Content Include="images\right2.gif" />
+    <Content Include="images\Stock\box_data_body_m.png" />
+    <Content Include="images\Stock\box_data_foot_m.png" />
+    <Content Include="images\Stock\box_data_head_m.png" />
+    <Content Include="js\jquery-1.12.4.js" />
+    <Content Include="js\jquery-1.7.2.min.js" />
+    <Content Include="js\jquery-1.9.1.js" />
+    <Content Include="js\jquery-ui-1.10.3.custom.js" />
+    <Content Include="js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\thickbox.js" />
+    <Content Include="js\ui\1.10.3\jquery-ui.js" />
+    <Content Include="js\ui\1.10.3\jquery.ui.core.js" />
+    <Content Include="js\ui\1.10.3\jquery.ui.datepicker.js" />
+    <Content Include="js\ui\1.10.3\jquery.ui.widget.js" />
+    <Content Include="MasterData\AmphurMgt.aspx" />
+    <Content Include="MasterData\ApproverMgt.aspx" />
+    <Content Include="MasterData\BuildingFloorMgt.aspx" />
+    <Content Include="MasterData\BuildingMgt.aspx" />
+    <Content Include="MasterData\CalendarPayGoodsTable.aspx" />
+    <Content Include="MasterData\ProvinceMgt.aspx" />
+    <Content Include="MasterData\StockAccMgt.aspx" />
+    <Content Include="MasterData\TumbonMgt.aspx" />
+    <Content Include="MasterData\TypeRequisitionMgt.aspx" />
+    <Content Include="MasterData\InOutStkMgt.aspx" />
+    <Content Include="MasterData\FormMgt.aspx" />
+    <Content Include="MasterData\StockLocation.aspx" />
+    <Content Include="MasterData\SupplierBuyMgt.aspx" />
+    <Content Include="MasterData\SupplierPriceMgt.aspx" />
+    <Content Include="MasterData\TypeMgt.aspx" />
+    <Content Include="ReportLog\Cancel_Good_Receiving_Content.aspx" />
+    <Content Include="ReportLog\Stock_Issue_content.aspx" />
+    <Content Include="ReportLog\Conversion_content.aspx" />
+    <Content Include="ReportLog\Supplier_content.aspx" />
+    <Content Include="ReportLog\Meterial_content.aspx" />
+    <Content Include="ReportLog\Goodreceiving.aspx" />
+    <Content Include="ReportLog\PO_Log.aspx" />
+    <Content Include="ReportLog\Request_Log.aspx" />
+    <Content Include="ReportLog\WebForm1.aspx" />
+    <Content Include="Other\detailOtherControl.ascx" />
+    <Content Include="Other\jquery-1.8.2.min.js" />
+    <Content Include="Other\jsonService.asmx" />
+    <Content Include="Other\PayOther.aspx" />
+    <Content Include="Other\ReceiveOther.aspx" />
+    <Content Include="Other\Site.css" />
+    <Content Include="Popup_ChangePassword.aspx" />
+    <Content Include="PRPO\HPSupplierSelect.aspx" />
+    <Content Include="PRPO\POApproveMgt.aspx" />
+    <Content Include="PRPO\POMgt.aspx" />
+    <Content Include="PRPO\pop_DepSelect.aspx" />
+    <Content Include="PRPO\pop_NoPOSelect.aspx" />
+    <Content Include="PRPO\pop_NoPRSelect.aspx" />
+    <Content Include="PRPO\pop_PaymentNo.aspx" />
+    <Content Include="PRPO\pop_PO.aspx" />
+    <Content Include="PRPO\pop_POPrintAttachReport.aspx" />
+    <Content Include="PRPO\pop_POPrintFormReport.aspx" />
+    <Content Include="PRPO\pop_POPrintMainReport.aspx" />
+    <Content Include="PRPO\pop_POPRPrint.aspx" />
+    <Content Include="PRPO\pop_POReport.aspx" />
+    <Content Include="PRPO\pop_PR.aspx" />
+    <Content Include="PRPO\pop_PRForm2Report.aspx" />
+    <Content Include="PRPO\pop_PrintForm2.aspx" />
+    <Content Include="PRPO\pop_PrintFormReport.aspx" />
+    <Content Include="PRPO\pop_ProductHelp.aspx" />
+    <Content Include="PRPO\pop_ProductPrintForm.aspx" />
+    <Content Include="PRPO\pop_ProductReOrderPointSelect2.aspx" />
+    <Content Include="PRPO\pop_ProductSelect2.aspx" />
+    <Content Include="PRPO\pop_PRPrintMainReport.aspx" />
+    <Content Include="PRPO\pop_PRReport.aspx" />
+    <Content Include="PRPO\pop_PRSelect.aspx" />
+    <Content Include="PRPO\pop_PRSelect2.aspx" />
+    <Content Include="PRPO\pop_SpecPurchase.aspx" />
+    <Content Include="PRPO\pop_SupplierSelect.aspx" />
+    <Content Include="PRPO\POP_SupplierSelectName.aspx" />
+    <Content Include="PRPO\POSearch.aspx" />
+    <Content Include="PRPO\POTrackingReport.aspx" />
+    <Content Include="PRPO\PRApproveMgt.aspx" />
+    <Content Include="PRPO\PRTrackingReport.aspx" />
+    <Content Include="PRPO\ReceiveAndWithdrawDailyReport.aspx" />
+    <Content Include="PRPO\ReceiveDailyReport.aspx" />
+    <Content Include="PRPO\ReorderPointPurchaseReport.aspx" />
+    <Content Include="PRPO\ReorderPointReport.aspx" />
+    <Content Include="PRPO\ReportOrderPO.aspx" />
+    <Content Include="PRPO\ReportRemainingPO.aspx" />
+    <Content Include="PRPO\ReportStockOnHand.aspx" />
+    <Content Include="PRPO\Routine.aspx" />
+    <Content Include="PRPO\RoutineStock.aspx" />
+    <Content Include="PRPO\RoutineStock_Cancel.aspx" />
+    <Content Include="PRPO\SupplierBuyMgt.aspx" />
+    <Content Include="PRPO\SupplierPriceMgt.aspx" />
+    <Content Include="PRPO\TempRPT_Routine.aspx" />
+    <Content Include="PRPO\UploadFile.aspx" />
+    <Content Include="PRPO\UploadPO.aspx" />
+    <Content Include="ReportLog\Report.aspx" />
+    <Content Include="reports\dgEmplyeeRequest.aspx" />
+    <Content Include="reports\dgEmplyeeRequest3.aspx" />
+    <Content Include="Request\dgItemCatagory.aspx" />
+    <Content Include="Request\frmRequest.aspx" />
+    <Content Include="Request\frmSubStockRequest.aspx" />
+    <Content Include="Request\OrgBudgetMgt.aspx" />
+    <Content Include="Request\popupReceiveDetail.aspx" />
+    <Content Include="Request\popupReorderPoint.aspx" />
+    <Content Include="Request\popupSaveLot.aspx" />
+    <Content Include="Request\pop_Remark.aspx" />
+    <Content Include="Request\RequestLotControl.ascx" />
+    <Content Include="Request\RequestReport.aspx" />
+    <Content Include="Request\RequestReportPay.aspx" />
+    <Content Include="Request\RequestStockOnHand.aspx" />
+    <Content Include="Request\Temp.aspx" />
+    <Content Include="Request\WithdrawGoodsReport.aspx" />
+    <Content Include="Script\default.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\arrow-down-3.png" />
+    <Content Include="images\arrow-up-3.png" />
+    <Content Include="images\arrow_down.gif" />
+    <Content Include="images\arrow_up.gif" />
+    <Content Include="images\bt_allocate.png" />
+    <Content Include="images\bt_allocate_click.png" />
+    <Content Include="images\bt_print.png" />
+    <Content Include="images\bt_print_click.png" />
+    <Content Include="images\bt_routine.png" />
+    <Content Include="images\bt_routine_click.png" />
+    <Content Include="images\bt_search.png" />
+    <Content Include="images\bt_search_click.png" />
+    <Content Include="images\button.png" />
+    <Content Include="images\button_ml.png" />
+    <Content Include="images\button_ml_over.png" />
+    <Content Include="images\button_over.png" />
+    <Content Include="images\calendar\close.gif" />
+    <Content Include="images\calendar\drop1.gif" />
+    <Content Include="images\calendar\drop2.gif" />
+    <Content Include="images\calendar\iclose.gif" />
+    <Content Include="images\calendar\left1.gif" />
+    <Content Include="images\calendar\left2.gif" />
+    <Content Include="images\calendar\right1.gif" />
+    <Content Include="images\calendar\right2.gif" />
+    <Content Include="images\Commands\calendar_selector.gif" />
+    <Content Include="images\Commands\calendar_selector_disable.gif" />
+    <Content Include="images\Commands\delete.png" />
+    <Content Include="images\Commands\dialog-accept.png" />
+    <Content Include="images\Commands\dialog-cancel.png" />
+    <Content Include="images\Commands\download.png" />
+    <Content Include="images\Commands\edit.png" />
+    <Content Include="images\Commands\new.png" />
+    <Content Include="images\Commands\print.png" />
+    <Content Include="images\Commands\select.png" />
+    <Content Include="images\Commands\view.png" />
+    <Content Include="images\Login\Login_bg.jpg" />
+    <Content Include="images\Login\Login_box.png" />
+    <Content Include="images\Login\Login_button.png" />
+    <Content Include="images\Login\Login_button_over.png" />
+    <Content Include="images\Login_button.png" />
+    <Content Include="images\Login_button_over.png" />
+    <Content Include="images\logo_gplus.png" />
+    <Content Include="images\logo_Muangthai.png" />
+    <Content Include="images\menu_separate.png" />
+    <Content Include="images\Stock\bg.jpg" />
+    <Content Include="images\Stock\box.png" />
+    <Content Include="images\Stock\box_data.png" />
+    <Content Include="images\Stock\box_data_body.png" />
+    <Content Include="images\Stock\box_data_foot.png" />
+    <Content Include="images\Stock\box_data_head.png" />
+    <Content Include="images\button_m.png" />
+    <Content Include="images\button_m_over.png" />
+    <Content Include="images\Stock\checklist.png" />
+    <Content Include="images\Stock\footter.png" />
+    <Content Include="images\Stock\grid_header.png" />
+    <Content Include="images\Stock\logo_gpkus.jpg" />
+    <Content Include="images\Stock\logo_Muangthai.jpg" />
+    <Content Include="images\Stock\MenuRight.png" />
+    <Content Include="images\Stock\MenuRight_over.png" />
+    <Content Include="images\Stock\MenuRight_silde.png" />
+    <Content Include="images\Stock\table.png" />
+    <Content Include="MasterData\AccountMgt.aspx" />
+    <Content Include="MasterData\BuyHistoryMgt.aspx" />
+    <Content Include="MasterData\ExpensesMgt.aspx" />
+    <Content Include="MasterData\pop_SupplierAccount.aspx" />
+    <Content Include="MasterData\ProjectMgt.aspx" />
+    <Content Include="MasterData\SupplierMgt.aspx" />
+    <Content Include="MasterData\UserMgt.aspx" />
+    <Content Include="MasterData\DepartmentMgt.aspx" />
+    <Content Include="MasterData\MaterialMgt.aspx" />
+    <Content Include="MasterData\MaterialPrice.aspx" />
+    <Content Include="MasterData\MaterialType.aspx" />
+    <Content Include="MasterData\PackageMgt.aspx" />
+    <Content Include="MasterData\StockLevel.aspx" />
+    <Content Include="MasterData\SubMeterialType.aspx" />
+    <Content Include="MasterData\TreasuryMgt.aspx" />
+    <Content Include="MasterData\UserGroupMgt.aspx" />
+    <Content Include="PRPO\pop_PrintForm.aspx" />
+    <Content Include="PRPO\pop_ProductReOrderPointSelect.aspx" />
+    <Content Include="PRPO\pop_ProductSelect.aspx" />
+    <Content Include="PRPO\PRMgt.aspx" />
+    <Content Include="PRPO\ProductCodeMgt.aspx" />
+    <Content Include="PRPO\ReorderPointMgt.aspx" />
+    <Content Include="Script\Calendar.js" />
+    <Content Include="Script\custom.js" />
+    <Content Include="Script\gridviewScroll.min.js" />
+    <Content Include="Script\jquery-1.7.2.js" />
+    <Content Include="Script\jquery-1.7.2.min.js" />
+    <Content Include="Script\jquery-ui.js" />
+    <Content Include="Script\js_calendardateUser.js" />
+    <Content Include="Script\js_calendardateUser2.js" />
+    <Content Include="Script\js_checkDate.js" />
+    <Content Include="Script\js_checkStr.js" />
+    <Content Include="Script\js_checkTime.js" />
+    <Content Include="Stock\InvEditListingReport.aspx" />
+    <Content Include="Stock\Error.aspx" />
+    <Content Include="Stock\PayReport.aspx" />
+    <Content Include="Stock\PayReportDivision.aspx" />
+    <Content Include="Stock\frmDistribute.aspx" />
+    <Content Include="Stock\MgtStockCardMonthlyClose.aspx" />
+    <Content Include="Stock\MgtStockCardMovment.aspx" />
+    <Content Include="Stock\PackDistribute.aspx" />
+    <Content Include="Stock\Pop_CloseReceiveStk.aspx" />
+    <Content Include="Stock\pop_Remark.aspx" />
+    <Content Include="Stock\pop_SetStockAddItem.aspx" />
+    <Content Include="Stock\ReceiveAndWithdrawCaseOtherReport.aspx" />
+    <Content Include="Stock\ReportStockGoodUnMoving.aspx" />
+    <Content Include="Stock\SetStock.aspx" />
+    <Content Include="Stock\SetStockItemSearchPopup.aspx" />
+    <Content Include="Stock\SetStockItemUserControl.ascx" />
+    <Content Include="Stock\SetStockLotUserControl.ascx" />
+    <Content Include="Stock\StockCardReport.aspx" />
+    <Content Include="Request\StockEventReport.aspx" />
+    <Content Include="Stock\StockReceiverForm.aspx" />
+    <Content Include="Stock\StockReceiverItemSearchPopup.aspx" />
+    <Content Include="Stock\StockReceiverLotPopup.aspx" />
+    <Content Include="Stock\StockReceiverLotUserControl.ascx" />
+    <Content Include="Stock\StockReceiverStockItemUserControl.ascx" />
+    <Content Include="Stock\STOCK_REC.aspx" />
+    <Content Include="Stock\SupplierMTL_Balance.aspx" />
+    <Content Include="themes\base\images\animated-overlay.gif" />
+    <Content Include="themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="themes\base\jquery-ui.css" />
+    <Content Include="themes\base\jquery.ui.accordion.css" />
+    <Content Include="themes\base\jquery.ui.all.css" />
+    <Content Include="themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="themes\base\jquery.ui.base.css" />
+    <Content Include="themes\base\jquery.ui.button.css" />
+    <Content Include="themes\base\jquery.ui.core.css" />
+    <Content Include="themes\base\jquery.ui.datepicker.css" />
+    <Content Include="themes\base\jquery.ui.dialog.css" />
+    <Content Include="themes\base\jquery.ui.menu.css" />
+    <Content Include="themes\base\jquery.ui.progressbar.css" />
+    <Content Include="themes\base\jquery.ui.resizable.css" />
+    <Content Include="themes\base\jquery.ui.selectable.css" />
+    <Content Include="themes\base\jquery.ui.slider.css" />
+    <Content Include="themes\base\jquery.ui.spinner.css" />
+    <Content Include="themes\base\jquery.ui.tabs.css" />
+    <Content Include="themes\base\jquery.ui.theme.css" />
+    <Content Include="themes\base\jquery.ui.tooltip.css" />
+    <Content Include="themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="themes\base\minified\jquery-ui.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="themes\smoothness\images\animated-overlay.gif" />
+    <Content Include="themes\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="themes\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="themes\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="themes\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="themes\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="themes\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="themes\smoothness\jquery-ui.css" />
+    <Content Include="themes\smoothness\jquery.ui.accordion.css" />
+    <Content Include="themes\smoothness\jquery.ui.all.css" />
+    <Content Include="themes\smoothness\jquery.ui.autocomplete.css" />
+    <Content Include="themes\smoothness\jquery.ui.base.css" />
+    <Content Include="themes\smoothness\jquery.ui.button.css" />
+    <Content Include="themes\smoothness\jquery.ui.core.css" />
+    <Content Include="themes\smoothness\jquery.ui.datepicker.css" />
+    <Content Include="themes\smoothness\jquery.ui.dialog.css" />
+    <Content Include="themes\smoothness\jquery.ui.menu.css" />
+    <Content Include="themes\smoothness\jquery.ui.progressbar.css" />
+    <Content Include="themes\smoothness\jquery.ui.resizable.css" />
+    <Content Include="themes\smoothness\jquery.ui.selectable.css" />
+    <Content Include="themes\smoothness\jquery.ui.slider.css" />
+    <Content Include="themes\smoothness\jquery.ui.spinner.css" />
+    <Content Include="themes\smoothness\jquery.ui.tabs.css" />
+    <Content Include="themes\smoothness\jquery.ui.theme.css" />
+    <Content Include="themes\smoothness\jquery.ui.tooltip.css" />
+    <Content Include="themes\smoothness\minified\images\animated-overlay.gif" />
+    <Content Include="themes\smoothness\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="themes\smoothness\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="themes\smoothness\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="themes\smoothness\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="themes\smoothness\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="themes\smoothness\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="themes\smoothness\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="themes\smoothness\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="themes\smoothness\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="themes\smoothness\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="themes\smoothness\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="themes\smoothness\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="themes\smoothness\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="themes\smoothness\minified\jquery-ui.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.accordion.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.button.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.core.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.dialog.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.menu.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.resizable.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.selectable.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.slider.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.spinner.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.tabs.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.theme.min.css" />
+    <Content Include="themes\smoothness\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="themes\ui-lightness\images\animated-overlay.gif" />
+    <Content Include="themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="themes\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="themes\ui-lightness\jquery-ui.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.accordion.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.all.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.autocomplete.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.base.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.button.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.core.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.datepicker.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.dialog.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.menu.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.progressbar.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.resizable.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.selectable.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.slider.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.spinner.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.tabs.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.theme.css" />
+    <Content Include="themes\ui-lightness\jquery.ui.tooltip.css" />
+    <Content Include="themes\ui-lightness\minified\images\animated-overlay.gif" />
+    <Content Include="themes\ui-lightness\minified\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="themes\ui-lightness\minified\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="themes\ui-lightness\minified\jquery-ui.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.accordion.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.button.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.core.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.dialog.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.menu.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.resizable.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.selectable.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.slider.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.spinner.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.tabs.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.theme.min.css" />
+    <Content Include="themes\ui-lightness\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="UserControls\AccountNameControl.ascx" />
+    <Content Include="UserControls\CalendarControl.ascx" />
+    <Content Include="UserControls\CalendarControl2.ascx" />
+    <Content Include="UserControls\CalendarDependOnMonthYearControl.ascx" />
+    <Content Include="UserControls\CalendarPayGoodsControl.ascx" />
+    <Content Include="UserControls\ItemControlPackBig.ascx" />
+    <Content Include="UserControls\ItemControlSupplier.ascx" />
+    <Content Include="UserControls\ItemOrgStructControl.ascx" />
+    <Content Include="UserControls\FileUploadControl.ascx" />
+    <Content Include="UserControls\HistoryPurchaseControl1.ascx" />
+    <Content Include="UserControls\HistoryPurchaseControl2.ascx" />
+    <Content Include="UserControls\ImageListControl.ascx" />
+    <Content Include="UserControls\ItemControl.ascx" />
+    <Content Include="UserControls\ItemControl2.ascx" />
+    <Content Include="UserControls\ItemControl4.ascx" />
+    <Content Include="UserControls\ItemControlMaterial.ascx" />
+    <Content Include="UserControls\ItemDivDepControl.ascx" />
+    <Content Include="UserControls\ItemOrgStructControl2.ascx" />
+    <Content Include="UserControls\ItemPackSelectorControl.ascx" />
+    <Content Include="UserControls\ItemSelectorControl.ascx" />
+    <Content Include="UserControls\MultiFileUpload.ascx" />
+    <Content Include="UserControls\NoPRPOControl.ascx" />
+    <Content Include="UserControls\PagingControl.ascx" />
+    <Content Include="UserControls\POControl.ascx" />
+    <Content Include="UserControls\POItemControl.ascx" />
+    <Content Include="UserControls\PopCalendar.aspx" />
+    <Content Include="UserControls\POPRAttachControl.ascx" />
+    <Content Include="UserControls\pop_OrgSelect.aspx" />
+    <Content Include="UserControls\pop_OrgSelect_New.aspx" />
+    <Content Include="UserControls\pop_Product.aspx" />
+    <Content Include="UserControls\pop_Product2.aspx" />
+    <Content Include="UserControls\pop_Product4.aspx" />
+    <Content Include="UserControls\pop_ProductMaterial.aspx" />
+    <Content Include="UserControls\pop_ProductPackBig.aspx" />
+    <Content Include="UserControls\PRControl.ascx" />
+    <Content Include="UserControls\ReportOrderPO.ascx" />
+    <Content Include="UserControls\SupplierDropdownControl.ascx" />
+    <Content Include="UserControls\SupplierItemControl.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\clsOtherHead.cs" />
+    <Content Include="App_Code\jsonService.cs">
+      <SubType>Component</SubType>
+    </Content>
+    <Compile Include="autocomplete.asmx.cs">
+      <DependentUpon>autocomplete.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="App_Code\clsConnDb.cs" />
+    <Compile Include="clsFuncMa.cs" />
+    <Compile Include="App_Code\clsOther.cs" />
+    <Compile Include="DataAccess\AccountDAO.cs" />
+    <Compile Include="DataAccess\AmphurDAO.cs" />
+    <Compile Include="DataAccess\ApproverDAO.cs" />
+    <Compile Include="DataAccess\BuildingDAO.cs" />
+    <Compile Include="DataAccess\CalendarDAO.cs" />
+    <Compile Include="DataAccess\CategoryDAO.cs" />
+    <Compile Include="DataAccess\PODAO2.cs" />
+    <Compile Include="DataAccess\POUploadDAO.cs" />
+    <Compile Include="DataAccess\PRDAO2.cs" />
+    <Compile Include="DataAccess\TempDAO.cs" />
+    <Compile Include="DataAccess\DataAccessBase.cs" />
+    <Compile Include="DataAccess\DatabaseHelper.cs" />
+    <Compile Include="DataAccess\DbConnectionBase.cs" />
+    <Compile Include="DataAccess\DistributeDAO.cs" />
+    <Compile Include="DataAccess\ExpenseDAO.cs" />
+    <Compile Include="DataAccess\FileDAO.cs" />
+    <Compile Include="DataAccess\FormDAO.cs" />
+    <Compile Include="DataAccess\HistoryPurchaseDAO.cs" />
+    <Compile Include="DataAccess\ItemDAO.cs" />
+    <Compile Include="DataAccess\OrgLocationDAO.cs" />
+    <Compile Include="DataAccess\OrgStructureDAO.cs" />
+    <Compile Include="DataAccess\PackageDAO.cs" />
+    <Compile Include="DataAccess\AccountExpenseDAO.cs" />
+    <Compile Include="DataAccess\PODAO.cs" />
+    <Compile Include="DataAccess\PRDAO.cs" />
+    <Compile Include="DataAccess\ProjectDAO.cs" />
+    <Compile Include="DataAccess\PrPoDAO.cs" />
+    <Compile Include="DataAccess\ReceiveStockDAO.cs" />
+    <Compile Include="DataAccess\ReorderPointDAO.cs" />
+    <Compile Include="DataAccess\RequestDAO.cs" />
+    <Compile Include="DataAccess\RequestItemDAO.cs" />
+    <Compile Include="DataAccess\RoutineStockDAO.cs" />
+    <Compile Include="DataAccess\StockDAO.cs" />
+    <Compile Include="DataAccess\ProvinceDAO.cs" />
+    <Compile Include="DataAccess\SupplierDAO.cs" />
+    <Compile Include="DataAccess\TypeDAO.cs" />
+    <Compile Include="DataAccess\UserDAO.cs" />
+    <Compile Include="DateUtil.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enum.cs" />
+    <Compile Include="Genbarcode.cs" />
+    <Compile Include="GetRequestStatus.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GridViewTemplate.cs" />
+    <Compile Include="Home\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\AccountMgt.aspx.cs">
+      <DependentUpon>AccountMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\AccountMgt.aspx.designer.cs">
+      <DependentUpon>AccountMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\AmphurMgt.aspx.cs">
+      <DependentUpon>AmphurMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\AmphurMgt.aspx.designer.cs">
+      <DependentUpon>AmphurMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\ApproverMgt.aspx.cs">
+      <DependentUpon>ApproverMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\ApproverMgt.aspx.designer.cs">
+      <DependentUpon>ApproverMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\BuildingFloorMgt.aspx.cs">
+      <DependentUpon>BuildingFloorMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\BuildingFloorMgt.aspx.designer.cs">
+      <DependentUpon>BuildingFloorMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\BuildingMgt.aspx.cs">
+      <DependentUpon>BuildingMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\BuildingMgt.aspx.designer.cs">
+      <DependentUpon>BuildingMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\BuyHistoryMgt.aspx.cs">
+      <DependentUpon>BuyHistoryMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\BuyHistoryMgt.aspx.designer.cs">
+      <DependentUpon>BuyHistoryMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\CalendarPayGoodsTable.aspx.cs">
+      <DependentUpon>CalendarPayGoodsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\CalendarPayGoodsTable.aspx.designer.cs">
+      <DependentUpon>CalendarPayGoodsTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\ProvinceMgt.aspx.cs">
+      <DependentUpon>ProvinceMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\ProvinceMgt.aspx.designer.cs">
+      <DependentUpon>ProvinceMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\StockAccMgt.aspx.cs">
+      <DependentUpon>StockAccMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\StockAccMgt.aspx.designer.cs">
+      <DependentUpon>StockAccMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\TumbonMgt.aspx.cs">
+      <DependentUpon>TumbonMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\TumbonMgt.aspx.designer.cs">
+      <DependentUpon>TumbonMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\TypeRequisitionMgt.aspx.cs">
+      <DependentUpon>TypeRequisitionMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\TypeRequisitionMgt.aspx.designer.cs">
+      <DependentUpon>TypeRequisitionMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\InOutStkMgt.aspx.cs">
+      <DependentUpon>InOutStkMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\InOutStkMgt.aspx.designer.cs">
+      <DependentUpon>InOutStkMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\DepartmentMgt.aspx.designer.cs">
+      <DependentUpon>DepartmentMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\ExpensesMgt.aspx.cs">
+      <DependentUpon>ExpensesMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\ExpensesMgt.aspx.designer.cs">
+      <DependentUpon>ExpensesMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\FormMgt.aspx.cs">
+      <DependentUpon>FormMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\FormMgt.aspx.designer.cs">
+      <DependentUpon>FormMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\MaterialMgt.aspx.designer.cs">
+      <DependentUpon>MaterialMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\pop_SupplierAccount.aspx.cs">
+      <DependentUpon>pop_SupplierAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\pop_SupplierAccount.aspx.designer.cs">
+      <DependentUpon>pop_SupplierAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\ProjectMgt.aspx.cs">
+      <DependentUpon>ProjectMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\ProjectMgt.aspx.designer.cs">
+      <DependentUpon>ProjectMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\StockLocation.aspx.cs">
+      <DependentUpon>StockLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\StockLocation.aspx.designer.cs">
+      <DependentUpon>StockLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\SupplierBuyMgt.aspx.cs">
+      <DependentUpon>SupplierBuyMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\SupplierBuyMgt.aspx.designer.cs">
+      <DependentUpon>SupplierBuyMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\SupplierMgt.aspx.cs">
+      <DependentUpon>SupplierMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\SupplierMgt.aspx.designer.cs">
+      <DependentUpon>SupplierMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\SupplierPriceMgt.aspx.cs">
+      <DependentUpon>SupplierPriceMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\SupplierPriceMgt.aspx.designer.cs">
+      <DependentUpon>SupplierPriceMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\TypeMgt.aspx.cs">
+      <DependentUpon>TypeMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\TypeMgt.aspx.designer.cs">
+      <DependentUpon>TypeMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\UserMgt.aspx.cs">
+      <DependentUpon>UserMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\UserMgt.aspx.designer.cs">
+      <DependentUpon>UserMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\DepartmentMgt.aspx.cs">
+      <DependentUpon>DepartmentMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\MaterialMgt.aspx.cs">
+      <DependentUpon>MaterialMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\MaterialPrice.aspx.cs">
+      <DependentUpon>MaterialPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\MaterialPrice.aspx.designer.cs">
+      <DependentUpon>MaterialPrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\MaterialType.aspx.cs">
+      <DependentUpon>MaterialType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\MaterialType.aspx.designer.cs">
+      <DependentUpon>MaterialType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\PackageMgt.aspx.cs">
+      <DependentUpon>PackageMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\PackageMgt.aspx.designer.cs">
+      <DependentUpon>PackageMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\StockLevel.aspx.cs">
+      <DependentUpon>StockLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\StockLevel.aspx.designer.cs">
+      <DependentUpon>StockLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\SubMeterialType.aspx.cs">
+      <DependentUpon>SubMeterialType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\SubMeterialType.aspx.designer.cs">
+      <DependentUpon>SubMeterialType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\TreasuryMgt.aspx.cs">
+      <DependentUpon>TreasuryMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\TreasuryMgt.aspx.designer.cs">
+      <DependentUpon>TreasuryMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData\UserGroupMgt.aspx.cs">
+      <DependentUpon>UserGroupMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterData\UserGroupMgt.aspx.designer.cs">
+      <DependentUpon>UserGroupMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Cancel_Good_Receiving_Content.aspx.cs">
+      <DependentUpon>Cancel_Good_Receiving_Content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\Cancel_Good_Receiving_Content.aspx.designer.cs">
+      <DependentUpon>Cancel_Good_Receiving_Content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Stock_Issue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Stock_Issue.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Stock_Issue_content.aspx.cs">
+      <DependentUpon>Stock_Issue_content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\Stock_Issue_content.aspx.designer.cs">
+      <DependentUpon>Stock_Issue_content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Conversion_content.aspx.cs">
+      <DependentUpon>Conversion_content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\Conversion_content.aspx.designer.cs">
+      <DependentUpon>Conversion_content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Supplier_content.aspx.cs">
+      <DependentUpon>Supplier_content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\Supplier_content.aspx.designer.cs">
+      <DependentUpon>Supplier_content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Meterial_content.aspx.cs">
+      <DependentUpon>Meterial_content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\Meterial_content.aspx.designer.cs">
+      <DependentUpon>Meterial_content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Goodreceiving.aspx.cs">
+      <DependentUpon>Goodreceiving.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\Goodreceiving.aspx.designer.cs">
+      <DependentUpon>Goodreceiving.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\PO_Log.aspx.cs">
+      <DependentUpon>PO_Log.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\PO_Log.aspx.designer.cs">
+      <DependentUpon>PO_Log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Request_Log.aspx.cs">
+      <DependentUpon>Request_Log.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\Request_Log.aspx.designer.cs">
+      <DependentUpon>Request_Log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelClass\InvoiceModel.cs" />
+    <Compile Include="ModelClass\ReceiveStkModel.cs" />
+    <Compile Include="ModelClass\StockModel.cs" />
+    <Compile Include="Other\PayOther.aspx.designer.cs">
+      <DependentUpon>PayOther.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\ReceiveOther.aspx.designer.cs">
+      <DependentUpon>ReceiveOther.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\HPSupplierSelect.aspx.cs">
+      <DependentUpon>HPSupplierSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\HPSupplierSelect.aspx.designer.cs">
+      <DependentUpon>HPSupplierSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\POP_SupplierSelectName.aspx.cs">
+      <DependentUpon>POP_SupplierSelectName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\POP_SupplierSelectName.aspx.designer.cs">
+      <DependentUpon>POP_SupplierSelectName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\EmailService.cs" />
+    <Compile Include="PRPO\PRPOHelper\POFileUpload.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\detailOtherControl.ascx.cs">
+      <DependentUpon>detailOtherControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\PayOther.aspx.cs">
+      <DependentUpon>PayOther.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\ReceiveOther.aspx.cs">
+      <DependentUpon>ReceiveOther.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pagebase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayReportDivision.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayReportDivision.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Popup_ChangePassword.aspx.cs">
+      <DependentUpon>Popup_ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popup_ChangePassword.aspx.designer.cs">
+      <DependentUpon>Popup_ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="POTrackingReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POTrackingReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PRPO\DataSetReprot2.cs">
+      <DependentUpon>DataSetReprot2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\DataSetReprot2.Designer.cs">
+      <DependentUpon>DataSetReprot2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\POApproveMgt.aspx.cs">
+      <DependentUpon>POApproveMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\POApproveMgt.aspx.designer.cs">
+      <DependentUpon>POApproveMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\POMgt.aspx.cs">
+      <DependentUpon>POMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\POMgt.aspx.designer.cs">
+      <DependentUpon>POMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_DepSelect.aspx.cs">
+      <DependentUpon>pop_DepSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_DepSelect.aspx.designer.cs">
+      <DependentUpon>pop_DepSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_NoPOSelect.aspx.cs">
+      <DependentUpon>pop_NoPOSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_NoPOSelect.aspx.designer.cs">
+      <DependentUpon>pop_NoPOSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_NoPRSelect.aspx.cs">
+      <DependentUpon>pop_NoPRSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_NoPRSelect.aspx.designer.cs">
+      <DependentUpon>pop_NoPRSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PaymentNo.aspx.cs">
+      <DependentUpon>pop_PaymentNo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PaymentNo.aspx.designer.cs">
+      <DependentUpon>pop_PaymentNo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PO.aspx.cs">
+      <DependentUpon>pop_PO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PO.aspx.designer.cs">
+      <DependentUpon>pop_PO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_POPrintAttachReport.aspx.cs">
+      <DependentUpon>pop_POPrintAttachReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_POPrintAttachReport.aspx.designer.cs">
+      <DependentUpon>pop_POPrintAttachReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_POPrintFormReport.aspx.cs">
+      <DependentUpon>pop_POPrintFormReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_POPrintFormReport.aspx.designer.cs">
+      <DependentUpon>pop_POPrintFormReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_POPrintMainReport.aspx.cs">
+      <DependentUpon>pop_POPrintMainReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_POPrintMainReport.aspx.designer.cs">
+      <DependentUpon>pop_POPrintMainReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_POPRPrint.aspx.cs">
+      <DependentUpon>pop_POPRPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_POPRPrint.aspx.designer.cs">
+      <DependentUpon>pop_POPRPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_POReport.aspx.cs">
+      <DependentUpon>pop_POReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_POReport.aspx.designer.cs">
+      <DependentUpon>pop_POReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PR.aspx.cs">
+      <DependentUpon>pop_PR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PR.aspx.designer.cs">
+      <DependentUpon>pop_PR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PRForm2Report.aspx.cs">
+      <DependentUpon>pop_PRForm2Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PRForm2Report.aspx.designer.cs">
+      <DependentUpon>pop_PRForm2Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PrintForm.aspx.cs">
+      <DependentUpon>pop_PrintForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PrintForm.aspx.designer.cs">
+      <DependentUpon>pop_PrintForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PrintForm2.aspx.cs">
+      <DependentUpon>pop_PrintForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PrintForm2.aspx.designer.cs">
+      <DependentUpon>pop_PrintForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PrintFormReport.aspx.cs">
+      <DependentUpon>pop_PrintFormReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PrintFormReport.aspx.designer.cs">
+      <DependentUpon>pop_PrintFormReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductHelp.aspx.cs">
+      <DependentUpon>pop_ProductHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductHelp.aspx.designer.cs">
+      <DependentUpon>pop_ProductHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductPrintForm.aspx.cs">
+      <DependentUpon>pop_ProductPrintForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductPrintForm.aspx.designer.cs">
+      <DependentUpon>pop_ProductPrintForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductReOrderPointSelect.aspx.cs">
+      <DependentUpon>pop_ProductReOrderPointSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductReOrderPointSelect.aspx.designer.cs">
+      <DependentUpon>pop_ProductReOrderPointSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductReOrderPointSelect2.aspx.cs">
+      <DependentUpon>pop_ProductReOrderPointSelect2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductReOrderPointSelect2.aspx.designer.cs">
+      <DependentUpon>pop_ProductReOrderPointSelect2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductSelect.aspx.cs">
+      <DependentUpon>pop_ProductSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductSelect.aspx.designer.cs">
+      <DependentUpon>pop_ProductSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductSelect2.aspx.cs">
+      <DependentUpon>pop_ProductSelect2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_ProductSelect2.aspx.designer.cs">
+      <DependentUpon>pop_ProductSelect2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PRPrintMainReport.aspx.cs">
+      <DependentUpon>pop_PRPrintMainReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PRPrintMainReport.aspx.designer.cs">
+      <DependentUpon>pop_PRPrintMainReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PRReport.aspx.cs">
+      <DependentUpon>pop_PRReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PRReport.aspx.designer.cs">
+      <DependentUpon>pop_PRReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PRSelect.aspx.cs">
+      <DependentUpon>pop_PRSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PRSelect.aspx.designer.cs">
+      <DependentUpon>pop_PRSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_PRSelect2.aspx.cs">
+      <DependentUpon>pop_PRSelect2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_PRSelect2.aspx.designer.cs">
+      <DependentUpon>pop_PRSelect2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_SpecPurchase.aspx.cs">
+      <DependentUpon>pop_SpecPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_SpecPurchase.aspx.designer.cs">
+      <DependentUpon>pop_SpecPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\pop_SupplierSelect.aspx.cs">
+      <DependentUpon>pop_SupplierSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\pop_SupplierSelect.aspx.designer.cs">
+      <DependentUpon>pop_SupplierSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\POSearch.aspx.cs">
+      <DependentUpon>POSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\POSearch.aspx.designer.cs">
+      <DependentUpon>POSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\POTrackingReport.aspx.cs">
+      <DependentUpon>POTrackingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\POTrackingReport.aspx.designer.cs">
+      <DependentUpon>POTrackingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\PRApproveMgt.aspx.cs">
+      <DependentUpon>PRApproveMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRApproveMgt.aspx.designer.cs">
+      <DependentUpon>PRApproveMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\PRMgt.aspx.cs">
+      <DependentUpon>PRMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRMgt.aspx.designer.cs">
+      <DependentUpon>PRMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\ProductCodeMgt.aspx.cs">
+      <DependentUpon>ProductCodeMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\ProductCodeMgt.aspx.designer.cs">
+      <DependentUpon>ProductCodeMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\DatabaseAccess.cs" />
+    <Compile Include="PRPO\PRPOHelper\PO.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\POHire.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\POPurchase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\PR.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\PRHire.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\PrintForm.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\PrintFormNew.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\PrintFormOld.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\PRPO.cs" />
+    <Compile Include="PRPO\PRPOHelper\PRPOActualTable.cs" />
+    <Compile Include="PRPO\PRPOHelper\PRPODeleteTable.cs" />
+    <Compile Include="PRPO\PRPOHelper\PRPOForm2ActualTable.cs" />
+    <Compile Include="PRPO\PRPOHelper\PRPOHireActualTable.cs" />
+    <Compile Include="PRPO\PRPOHelper\PRPOPrintFormTable.cs" />
+    <Compile Include="PRPO\PRPOHelper\PRPOPurchaseActualTable.cs" />
+    <Compile Include="PRPO\PRPOHelper\PRPOPurchaseVirtualTable.cs" />
+    <Compile Include="PRPO\PRPOHelper\PRPOUploadFileTable.cs" />
+    <Compile Include="PRPO\PRPOHelper\PRPurchase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRPOHelper\TableBase.cs" />
+    <Compile Include="PRPO\PRPOHelper\Util.cs" />
+    <Compile Include="PRPO\PRPOUtil.cs" />
+    <Compile Include="PRPO\PRTrackingReport.aspx.cs">
+      <DependentUpon>PRTrackingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\PRTrackingReport.aspx.designer.cs">
+      <DependentUpon>PRTrackingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\ReceiveAndWithdrawDailyReport.aspx.cs">
+      <DependentUpon>ReceiveAndWithdrawDailyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\ReceiveAndWithdrawDailyReport.aspx.designer.cs">
+      <DependentUpon>ReceiveAndWithdrawDailyReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\ReceiveDailyReport.aspx.cs">
+      <DependentUpon>ReceiveDailyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\ReceiveDailyReport.aspx.designer.cs">
+      <DependentUpon>ReceiveDailyReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\ReorderPointMgt.aspx.cs">
+      <DependentUpon>ReorderPointMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\ReorderPointMgt.aspx.designer.cs">
+      <DependentUpon>ReorderPointMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\ReorderPointPurchaseReport.aspx.cs">
+      <DependentUpon>ReorderPointPurchaseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\ReorderPointPurchaseReport.aspx.designer.cs">
+      <DependentUpon>ReorderPointPurchaseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\ReorderPointReport.aspx.cs">
+      <DependentUpon>ReorderPointReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\ReorderPointReport.aspx.designer.cs">
+      <DependentUpon>ReorderPointReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\ReportOrderPO.aspx.cs">
+      <DependentUpon>ReportOrderPO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\ReportOrderPO.aspx.designer.cs">
+      <DependentUpon>ReportOrderPO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\ReportRemainingPO.aspx.cs">
+      <DependentUpon>ReportRemainingPO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\ReportRemainingPO.aspx.designer.cs">
+      <DependentUpon>ReportRemainingPO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\ReportStockOnHand.aspx.cs">
+      <DependentUpon>ReportStockOnHand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\ReportStockOnHand.aspx.designer.cs">
+      <DependentUpon>ReportStockOnHand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\Report_Test.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PRPO\Report_Test_2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PRPO\Report_Test_3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PRPO\Routine.aspx.cs">
+      <DependentUpon>Routine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\Routine.aspx.designer.cs">
+      <DependentUpon>Routine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\RoutineStock.aspx.cs">
+      <DependentUpon>RoutineStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\RoutineStock.aspx.designer.cs">
+      <DependentUpon>RoutineStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\RoutineStock_Cancel.aspx.cs">
+      <DependentUpon>RoutineStock_Cancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\RoutineStock_Cancel.aspx.designer.cs">
+      <DependentUpon>RoutineStock_Cancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\SupplierBuyMgt.aspx.cs">
+      <DependentUpon>SupplierBuyMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\SupplierBuyMgt.aspx.designer.cs">
+      <DependentUpon>SupplierBuyMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\SupplierPriceMgt.aspx.cs">
+      <DependentUpon>SupplierPriceMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\SupplierPriceMgt.aspx.designer.cs">
+      <DependentUpon>SupplierPriceMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\TempRPT_Routine.aspx.cs">
+      <DependentUpon>TempRPT_Routine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\TempRPT_Routine.aspx.designer.cs">
+      <DependentUpon>TempRPT_Routine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\UploadFile.aspx.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\UploadFile.aspx.designer.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRPO\UploadPO.aspx.cs">
+      <DependentUpon>UploadPO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRPO\UploadPO.aspx.designer.cs">
+      <DependentUpon>UploadPO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRTrackingReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRTrackingReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiveAndWithDrawDataSet.Designer.cs" />
+    <Compile Include="RemainingPODataSet.Designer.cs" />
+    <Compile Include="ReorderPointPurchaseDataSet.Designer.cs" />
+    <Compile Include="ReportDataSet.cs">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Close_IS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Close_IS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Conversion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Conversion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Log_PO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Log_PO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Material.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Material.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportLog\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLog\Supplier.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Supplier.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportOrderPODataSet.Designer.cs" />
+    <Compile Include="ReportRemainingPODataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportRemainingPODataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStockOnHandDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportStockOnHandDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reports\dgEmplyeeRequest3.aspx.cs">
+      <DependentUpon>dgEmplyeeRequest3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\dgEmplyeeRequest3.aspx.designer.cs">
+      <DependentUpon>dgEmplyeeRequest3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\PayDailyReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\ReceiveDailyReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\dgEmplyeeRequest.aspx.cs">
+      <DependentUpon>dgEmplyeeRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reports\dgEmplyeeRequest.aspx.designer.cs">
+      <DependentUpon>dgEmplyeeRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\dgItemCatagory.aspx.cs">
+      <DependentUpon>dgItemCatagory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\dgItemCatagory.aspx.designer.cs">
+      <DependentUpon>dgItemCatagory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\frmRequest.aspx.cs">
+      <DependentUpon>frmRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\frmRequest.aspx.designer.cs">
+      <DependentUpon>frmRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\frmSubStockRequest.aspx.cs">
+      <DependentUpon>frmSubStockRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\frmSubStockRequest.aspx.designer.cs">
+      <DependentUpon>frmSubStockRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\OrgBudgetMgt.aspx.cs">
+      <DependentUpon>OrgBudgetMgt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\OrgBudgetMgt.aspx.designer.cs">
+      <DependentUpon>OrgBudgetMgt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\popupReceiveDetail.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>popupReceiveDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\popupReceiveDetail.aspx.designer.cs">
+      <DependentUpon>popupReceiveDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\popupReorderPoint.aspx.cs">
+      <DependentUpon>popupReorderPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\popupReorderPoint.aspx.designer.cs">
+      <DependentUpon>popupReorderPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\popupSaveLot.aspx.cs">
+      <DependentUpon>popupSaveLot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\popupSaveLot.aspx.designer.cs">
+      <DependentUpon>popupSaveLot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\pop_Remark.aspx.cs">
+      <DependentUpon>pop_Remark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\pop_Remark.aspx.designer.cs">
+      <DependentUpon>pop_Remark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\RequestLotControl.ascx.cs">
+      <DependentUpon>RequestLotControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\RequestLotControl.ascx.designer.cs">
+      <DependentUpon>RequestLotControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\RequestReport.aspx.cs">
+      <DependentUpon>RequestReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\RequestReport.aspx.designer.cs">
+      <DependentUpon>RequestReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\RequestReportPay.aspx.cs">
+      <DependentUpon>RequestReportPay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\RequestReportPay.aspx.designer.cs">
+      <DependentUpon>RequestReportPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\RequestStockOnHand.aspx.cs">
+      <DependentUpon>RequestStockOnHand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\RequestStockOnHand.aspx.designer.cs">
+      <DependentUpon>RequestStockOnHand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\Temp.aspx.cs">
+      <DependentUpon>Temp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\Temp.aspx.designer.cs">
+      <DependentUpon>Temp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\WithdrawGoodsReport.aspx.cs">
+      <DependentUpon>WithdrawGoodsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\WithdrawGoodsReport.aspx.designer.cs">
+      <DependentUpon>WithdrawGoodsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StockCardDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockCardDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockEventReportDataSet.Designer.cs" />
+    <Compile Include="Stock\Commons\GiveAwayTypes.cs" />
+    <Compile Include="Stock\Commons\StockReceive.cs" />
+    <Compile Include="Stock\Commons\StockReceiveItem.cs" />
+    <Compile Include="Stock\Commons\StockReceiveLot.cs" />
+    <Compile Include="Stock\Commons\StockReceiveLotLocation.cs" />
+    <Compile Include="Stock\Commons\StockReceiveNotSame.cs" />
+    <Compile Include="Stock\InvEditListingReport.aspx.cs">
+      <DependentUpon>InvEditListingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\InvEditListingReport.aspx.designer.cs">
+      <DependentUpon>InvEditListingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\PayReport.aspx.cs">
+      <DependentUpon>PayReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\PayReport.aspx.designer.cs">
+      <DependentUpon>PayReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\PayReportDivision.aspx.cs">
+      <DependentUpon>PayReportDivision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\PayReportDivision.aspx.designer.cs">
+      <DependentUpon>PayReportDivision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\frmDistribute.aspx.cs">
+      <DependentUpon>frmDistribute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\frmDistribute.aspx.designer.cs">
+      <DependentUpon>frmDistribute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\MgtStockCardMonthlyClose.aspx.cs">
+      <DependentUpon>MgtStockCardMonthlyClose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\MgtStockCardMonthlyClose.aspx.designer.cs">
+      <DependentUpon>MgtStockCardMonthlyClose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\MgtStockCardMovment.aspx.cs">
+      <DependentUpon>MgtStockCardMovment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\MgtStockCardMovment.aspx.designer.cs">
+      <DependentUpon>MgtStockCardMovment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\PackDistribute.aspx.cs">
+      <DependentUpon>PackDistribute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\PackDistribute.aspx.designer.cs">
+      <DependentUpon>PackDistribute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\Pop_CloseReceiveStk.aspx.cs">
+      <DependentUpon>Pop_CloseReceiveStk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\Pop_CloseReceiveStk.aspx.designer.cs">
+      <DependentUpon>Pop_CloseReceiveStk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\pop_Remark.aspx.cs">
+      <DependentUpon>pop_Remark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\pop_Remark.aspx.designer.cs">
+      <DependentUpon>pop_Remark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\pop_SetStockAddItem.aspx.cs">
+      <DependentUpon>pop_SetStockAddItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\pop_SetStockAddItem.aspx.designer.cs">
+      <DependentUpon>pop_SetStockAddItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\ReceiveAndWithdrawCaseOtherReport.aspx.cs">
+      <DependentUpon>ReceiveAndWithdrawCaseOtherReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\ReceiveAndWithdrawCaseOtherReport.aspx.designer.cs">
+      <DependentUpon>ReceiveAndWithdrawCaseOtherReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\ReportStockGoodUnMoving.aspx.cs">
+      <DependentUpon>ReportStockGoodUnMoving.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\ReportStockGoodUnMoving.aspx.designer.cs">
+      <DependentUpon>ReportStockGoodUnMoving.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\SetStock.aspx.cs">
+      <DependentUpon>SetStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\SetStock.aspx.designer.cs">
+      <DependentUpon>SetStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\SetStockItemSearchPopup.aspx.cs">
+      <DependentUpon>SetStockItemSearchPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\SetStockItemSearchPopup.aspx.designer.cs">
+      <DependentUpon>SetStockItemSearchPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\SetStockItemUserControl.ascx.cs">
+      <DependentUpon>SetStockItemUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\SetStockItemUserControl.ascx.designer.cs">
+      <DependentUpon>SetStockItemUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\SetStockLotUserControl.ascx.cs">
+      <DependentUpon>SetStockLotUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\SetStockLotUserControl.ascx.designer.cs">
+      <DependentUpon>SetStockLotUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\StockCardReport.aspx.cs">
+      <DependentUpon>StockCardReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\StockCardReport.aspx.designer.cs">
+      <DependentUpon>StockCardReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request\StockEventReport.aspx.cs">
+      <DependentUpon>StockEventReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request\StockEventReport.aspx.designer.cs">
+      <DependentUpon>StockEventReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\StockReceiverForm.aspx.cs">
+      <DependentUpon>StockReceiverForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\StockReceiverForm.aspx.designer.cs">
+      <DependentUpon>StockReceiverForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\StockReceiverItemSearchPopup.aspx.cs">
+      <DependentUpon>StockReceiverItemSearchPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\StockReceiverItemSearchPopup.aspx.designer.cs">
+      <DependentUpon>StockReceiverItemSearchPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\StockReceiverLotPopup.aspx.cs">
+      <DependentUpon>StockReceiverLotPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\StockReceiverLotPopup.aspx.designer.cs">
+      <DependentUpon>StockReceiverLotPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\StockReceiverLotUserControl.ascx.cs">
+      <DependentUpon>StockReceiverLotUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\StockReceiverLotUserControl.ascx.designer.cs">
+      <DependentUpon>StockReceiverLotUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\StockReceiverStockItemUserControl.ascx.cs">
+      <DependentUpon>StockReceiverStockItemUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\StockReceiverStockItemUserControl.ascx.designer.cs">
+      <DependentUpon>StockReceiverStockItemUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\STOCK_REC.aspx.cs">
+      <DependentUpon>STOCK_REC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\STOCK_REC.aspx.designer.cs">
+      <DependentUpon>STOCK_REC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\SupplierMTL_Balance.aspx.cs">
+      <DependentUpon>SupplierMTL_Balance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock\SupplierMTL_Balance.aspx.designer.cs">
+      <DependentUpon>SupplierMTL_Balance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testds.cs">
+      <DependentUpon>testds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testds.designer.cs">
+      <DependentUpon>testds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AccountNameControl.ascx.cs">
+      <DependentUpon>AccountNameControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AccountNameControl.ascx.designer.cs">
+      <DependentUpon>AccountNameControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CalendarControl.ascx.cs">
+      <DependentUpon>CalendarControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CalendarControl.ascx.designer.cs">
+      <DependentUpon>CalendarControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CalendarControl2.ascx.cs">
+      <DependentUpon>CalendarControl2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CalendarControl2.ascx.designer.cs">
+      <DependentUpon>CalendarControl2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CalendarDependOnMonthYearControl.ascx.cs">
+      <DependentUpon>CalendarDependOnMonthYearControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CalendarDependOnMonthYearControl.ascx.designer.cs">
+      <DependentUpon>CalendarDependOnMonthYearControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CalendarPayGoodsControl.ascx.cs">
+      <DependentUpon>CalendarPayGoodsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CalendarPayGoodsControl.ascx.designer.cs">
+      <DependentUpon>CalendarPayGoodsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemControlPackBig.ascx.cs">
+      <DependentUpon>ItemControlPackBig.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemControlPackBig.ascx.designer.cs">
+      <DependentUpon>ItemControlPackBig.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemControlSupplier.ascx.cs">
+      <DependentUpon>ItemControlSupplier.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemControlSupplier.ascx.designer.cs">
+      <DependentUpon>ItemControlSupplier.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemOrgStructControl.ascx.cs">
+      <DependentUpon>ItemOrgStructControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemOrgStructControl.ascx.designer.cs">
+      <DependentUpon>ItemOrgStructControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FileUploadControl.ascx.cs">
+      <DependentUpon>FileUploadControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\FileUploadControl.ascx.designer.cs">
+      <DependentUpon>FileUploadControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HistoryPurchaseControl1.ascx.cs">
+      <DependentUpon>HistoryPurchaseControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\HistoryPurchaseControl1.ascx.designer.cs">
+      <DependentUpon>HistoryPurchaseControl1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HistoryPurchaseControl2.ascx.cs">
+      <DependentUpon>HistoryPurchaseControl2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\HistoryPurchaseControl2.ascx.designer.cs">
+      <DependentUpon>HistoryPurchaseControl2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ImageListControl.ascx.cs">
+      <DependentUpon>ImageListControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ImageListControl.ascx.designer.cs">
+      <DependentUpon>ImageListControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemControl.ascx.cs">
+      <DependentUpon>ItemControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemControl.ascx.designer.cs">
+      <DependentUpon>ItemControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemControl2.ascx.cs">
+      <DependentUpon>ItemControl2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemControl2.ascx.designer.cs">
+      <DependentUpon>ItemControl2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemControl4.ascx.cs">
+      <DependentUpon>ItemControl4.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemControl4.ascx.designer.cs">
+      <DependentUpon>ItemControl4.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemControlMaterial.ascx.cs">
+      <DependentUpon>ItemControlMaterial.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemControlMaterial.ascx.designer.cs">
+      <DependentUpon>ItemControlMaterial.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemDivDepControl.ascx.cs">
+      <DependentUpon>ItemDivDepControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemDivDepControl.ascx.designer.cs">
+      <DependentUpon>ItemDivDepControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemOrgStructControl2.ascx.cs">
+      <DependentUpon>ItemOrgStructControl2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemOrgStructControl2.ascx.designer.cs">
+      <DependentUpon>ItemOrgStructControl2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemPackSelectorControl.ascx.cs">
+      <DependentUpon>ItemPackSelectorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemPackSelectorControl.ascx.designer.cs">
+      <DependentUpon>ItemPackSelectorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemSelectorControl.ascx.cs">
+      <DependentUpon>ItemSelectorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemSelectorControl.ascx.designer.cs">
+      <DependentUpon>ItemSelectorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MultiFileUpload.ascx.cs">
+      <DependentUpon>MultiFileUpload.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MultiFileUpload.ascx.designer.cs">
+      <DependentUpon>MultiFileUpload.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoPRPOControl.ascx.cs">
+      <DependentUpon>NoPRPOControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NoPRPOControl.ascx.designer.cs">
+      <DependentUpon>NoPRPOControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PagingControl.ascx.cs">
+      <DependentUpon>PagingControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PagingControl.ascx.designer.cs">
+      <DependentUpon>PagingControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\POControl.ascx.cs">
+      <DependentUpon>POControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\POControl.ascx.designer.cs">
+      <DependentUpon>POControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\POItemControl.ascx.cs">
+      <DependentUpon>POItemControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\POItemControl.ascx.designer.cs">
+      <DependentUpon>POItemControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PopCalendar.aspx.cs">
+      <DependentUpon>PopCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PopCalendar.aspx.designer.cs">
+      <DependentUpon>PopCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\POPRAttachControl.ascx.cs">
+      <DependentUpon>POPRAttachControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\POPRAttachControl.ascx.designer.cs">
+      <DependentUpon>POPRAttachControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\pop_OrgSelect.aspx.cs">
+      <DependentUpon>pop_OrgSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\pop_OrgSelect.aspx.designer.cs">
+      <DependentUpon>pop_OrgSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\pop_OrgSelect_New.aspx.cs">
+      <DependentUpon>pop_OrgSelect_New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\pop_OrgSelect_New.aspx.designer.cs">
+      <DependentUpon>pop_OrgSelect_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\pop_Product.aspx.cs">
+      <DependentUpon>pop_Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\pop_Product.aspx.designer.cs">
+      <DependentUpon>pop_Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\pop_Product2.aspx.cs">
+      <DependentUpon>pop_Product2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\pop_Product2.aspx.designer.cs">
+      <DependentUpon>pop_Product2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\pop_Product4.aspx.cs">
+      <DependentUpon>pop_Product4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\pop_Product4.aspx.designer.cs">
+      <DependentUpon>pop_Product4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\pop_ProductMaterial.aspx.cs">
+      <DependentUpon>pop_ProductMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\pop_ProductMaterial.aspx.designer.cs">
+      <DependentUpon>pop_ProductMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\pop_ProductPackBig.aspx.cs">
+      <DependentUpon>pop_ProductPackBig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\pop_ProductPackBig.aspx.designer.cs">
+      <DependentUpon>pop_ProductPackBig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PRControl.ascx.cs">
+      <DependentUpon>PRControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\PRControl.ascx.designer.cs">
+      <DependentUpon>PRControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportOrderPO.ascx.cs">
+      <DependentUpon>ReportOrderPO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReportOrderPO.ascx.designer.cs">
+      <DependentUpon>ReportOrderPO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SupplierDropdownControl.ascx.cs">
+      <DependentUpon>SupplierDropdownControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SupplierDropdownControl.ascx.designer.cs">
+      <DependentUpon>SupplierDropdownControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SupplierItemControl.ascx.cs">
+      <DependentUpon>SupplierItemControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SupplierItemControl.ascx.designer.cs">
+      <DependentUpon>SupplierItemControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\" />
+    <Folder Include="obj\" />
+    <Folder Include="Uploads\Items\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\gplus.skin" />
+    <None Include="images\calendar\Thumbs.db" />
+    <Content Include="MasterPage\Main.Master" />
+    <Content Include="packages.config" />
+    <None Include="PayReportDivision.xsc">
+      <DependentUpon>PayReportDivision.xsd</DependentUpon>
+    </None>
+    <None Include="PayReportDivision.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PayReportDivision.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PayReportDivision.xss">
+      <DependentUpon>PayReportDivision.xsd</DependentUpon>
+    </None>
+    <None Include="POTrackingReportDataSet.xsc">
+      <DependentUpon>POTrackingReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="POTrackingReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POTrackingReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POTrackingReportDataSet.xss">
+      <DependentUpon>POTrackingReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="PRPO\DataSetReprot2.xsc">
+      <DependentUpon>DataSetReprot2.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="PRPO\DataSetReprot2.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="PRPO\DataSetReprot2.xss">
+      <DependentUpon>DataSetReprot2.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="PRPO\ReportRoutine.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="PRTrackingReportDataSet.xsc">
+      <DependentUpon>PRTrackingReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PRTrackingReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PRTrackingReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PRTrackingReportDataSet.xss">
+      <DependentUpon>PRTrackingReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReceiveAndWithDrawDataSet.xsc">
+      <DependentUpon>ReceiveAndWithDrawDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="ReceiveAndWithDrawDataSet.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="ReceiveAndWithDrawDataSet.xss">
+      <DependentUpon>ReceiveAndWithDrawDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="RemainingPODataSet.xsc">
+      <DependentUpon>RemainingPODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RemainingPODataSet.xsd" />
+    <None Include="RemainingPODataSet.xss">
+      <DependentUpon>RemainingPODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReorderPointPurchaseDataSet.xsc">
+      <DependentUpon>ReorderPointPurchaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReorderPointPurchaseDataSet.xsd" />
+    <None Include="ReorderPointPurchaseDataSet.xss">
+      <DependentUpon>ReorderPointPurchaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportDataSet.xsc">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportDataSet.xss">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="ReportLog\Supplier.xsc">
+      <DependentUpon>Supplier.xsd</DependentUpon>
+    </Content>
+    <Content Include="ReportLog\Conversion.xsc">
+      <DependentUpon>Conversion.xsd</DependentUpon>
+    </Content>
+    <Content Include="ReportLog\Close_IS.xsc">
+      <DependentUpon>Close_IS.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportLog\Close_IS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Close_IS.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ReportLog\Close_IS.xss">
+      <DependentUpon>Close_IS.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportLog\Conversion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Conversion.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ReportLog\Conversion.xss">
+      <DependentUpon>Conversion.xsd</DependentUpon>
+    </Content>
+    <Content Include="ReportLog\Material.xsc">
+      <DependentUpon>Material.xsd</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="ReportLog\Cancel_Good_Receiving.rdlc" />
+    <EmbeddedResource Include="ReportLog\Close_IS.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportLog\Log_PO.rdlc" />
+    <EmbeddedResource Include="ReportLog\NewFolder1\Close_IS.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportLog\NewFolder1\Conversion.rdlc" />
+    <EmbeddedResource Include="ReportLog\NewFolder1\GoodReceiving.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportLog\NewFolder1\Log_PO.rdlc" />
+    <EmbeddedResource Include="ReportLog\NewFolder1\Material.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportLog\NewFolder1\Stock_Issue.rdlc" />
+    <EmbeddedResource Include="ReportLog\NewFolder1\Supplier.rdlc" />
+    <EmbeddedResource Include="ReportLog\Report2.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="ReportLog\Log_PO.xsc">
+      <DependentUpon>Log_PO.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportLog\Log_PO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Log_PO.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ReportLog\Log_PO.xss">
+      <DependentUpon>Log_PO.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportLog\Material.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Material.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ReportLog\Material.xss">
+      <DependentUpon>Material.xsd</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="ReportLog\Stock_Issue.rdlc" />
+    <EmbeddedResource Include="ReportLog\Test_PO.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="ReportLog\Stock_Issue.xsc">
+      <DependentUpon>Stock_Issue.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportLog\Stock_Issue.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Stock_Issue.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ReportLog\Stock_Issue.xss">
+      <DependentUpon>Stock_Issue.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportLog\Supplier.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Supplier.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ReportLog\Supplier.xss">
+      <DependentUpon>Supplier.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportOrderPODataSet.xsc">
+      <DependentUpon>ReportOrderPODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportOrderPODataSet.xsd" />
+    <None Include="ReportOrderPODataSet.xss">
+      <DependentUpon>ReportOrderPODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportRemainingPODataSet.xsc">
+      <DependentUpon>ReportRemainingPODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportRemainingPODataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportRemainingPODataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportRemainingPODataSet.xss">
+      <DependentUpon>ReportRemainingPODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportStockOnHandDataSet.xsc">
+      <DependentUpon>ReportStockOnHandDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="ReportStockOnHandDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportStockOnHandDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="ReportStockOnHandDataSet.xss">
+      <DependentUpon>ReportStockOnHandDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StockCardDataSet.xsc">
+      <DependentUpon>StockCardDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StockCardDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockCardDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockCardDataSet.xss">
+      <DependentUpon>StockCardDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StockEventReportDataSet.xsc">
+      <DependentUpon>StockEventReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StockEventReportDataSet.xsd" />
+    <None Include="StockEventReportDataSet.xss">
+      <DependentUpon>StockEventReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="testds.xsc">
+      <DependentUpon>testds.xsd</DependentUpon>
+    </None>
+    <None Include="testds.xsd" />
+    <None Include="testds.xss">
+      <DependentUpon>testds.xsd</DependentUpon>
+    </None>
+    <None Include="WithdrawGoodsReport.xsc">
+      <DependentUpon>WithdrawGoodsReport.xsd</DependentUpon>
+    </None>
+    <None Include="WithdrawGoodsReport.xsd" />
+    <None Include="WithdrawGoodsReport.xss">
+      <DependentUpon>WithdrawGoodsReport.xsd</DependentUpon>
+    </None>
+    <None Include="WithdrawGoodsSummaryReport.xsc">
+      <DependentUpon>WithdrawGoodsSummaryReport.xsd</DependentUpon>
+    </None>
+    <None Include="WithdrawGoodsSummaryReport.xsd" />
+    <None Include="WithdrawGoodsSummaryReport.xss">
+      <DependentUpon>WithdrawGoodsSummaryReport.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\PRMainReport_NoFooter.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PRPO\ReorderPointReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POMainReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\PrintFormOldReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PRPO\PrintFormReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\PRForm2Report.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POAttachReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POPRReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POPrintFormReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\PRMainReport2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POMainReport2_NOFooter.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POTrackingReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PRPO\PRTrackingReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PRPO\ReportRemainingPO.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PRPO\ReportStockOnHand.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Stock\StockCardReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Request\RequestReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\Report_Test.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_Test1.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PRPO\Report_Test_2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_Test_21.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Request\WithdrawGoodsReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\Report_Test_3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_Test_31.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Request\SummaryWithdrawGoodsReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\ReorderPointPurchaseReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="reports\PayDailyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PayDailyReport1.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="reports\ReceiveDailyReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReceiveDailyReport21.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\ReceiveAndWithdrawDailyReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PRPO\ReceiveAndWithdrawDailyReport_Pay.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Stock\ReceiveAndWithdrawCaseOtherReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Stock\PayReportDivision.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Request\WithdrawGoodsReport2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Request\WithdrawGoodsReportSummary2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Stock\Report2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Request\StockEventReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Request\StockEventReportSummary.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POAttachReport2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Stock\InvEditListingReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POPrintFormReport2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POMainReport_OLD.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\POMainReport2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PRPO\PrintFormReport_OLD.rdlc" />
+    <Content Include="PRPO\PrintFormOldReport_OLD.rdlc" />
+    <Content Include="PRPO\PRMainReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Stock\ReportStockGoodUnMoving.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRPO\ReportOrderPO.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReportLog\Conversion.rdlc" />
+    <EmbeddedResource Include="ReportLog\GoodReceiving.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportLog\Material.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportLog\Supplier.rdlc" />
+    <EmbeddedResource Include="Request\RequestReport_new.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1291</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

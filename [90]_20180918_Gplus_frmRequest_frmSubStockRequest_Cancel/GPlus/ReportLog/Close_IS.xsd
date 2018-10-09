@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Close_IS" targetNamespace="http://tempuri.org/Close_IS.xsd" xmlns:mstns="http://tempuri.org/Close_IS.xsd" xmlns="http://tempuri.org/Close_IS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Close_IS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Close_IS" msprop:Generator_UserDSName="Close_IS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Close_IS" msprop:Generator_TableClassName="Close_ISDataTable" msprop:Generator_TableVarName="tableClose_IS" msprop:Generator_TablePropName="_Close_IS" msprop:Generator_RowDeletingName="Close_ISRowDeleting" msprop:Generator_RowChangingName="Close_ISRowChanging" msprop:Generator_RowEvHandlerName="Close_ISRowChangeEventHandler" msprop:Generator_RowDeletedName="Close_ISRowDeleted" msprop:Generator_UserTableName="Close_IS" msprop:Generator_RowChangedName="Close_ISRowChanged" msprop:Generator_RowEvArgName="Close_ISRowChangeEvent" msprop:Generator_RowClassName="Close_ISRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Process_date" msprop:Generator_ColumnVarNameInTable="columnProcess_date" msprop:Generator_ColumnPropNameInRow="Process_date" msprop:Generator_ColumnPropNameInTable="Process_dateColumn" msprop:Generator_UserColumnName="Process_date" type="xs:string" minOccurs="0" />
+              <xs:element name="Transfer_date" msprop:Generator_ColumnVarNameInTable="columnTransfer_date" msprop:Generator_ColumnPropNameInRow="Transfer_date" msprop:Generator_ColumnPropNameInTable="Transfer_dateColumn" msprop:Generator_UserColumnName="Transfer_date" type="xs:string" minOccurs="0" />
+              <xs:element name="Filename_transfer" msprop:Generator_ColumnVarNameInTable="columnFilename_transfer" msprop:Generator_ColumnPropNameInRow="Filename_transfer" msprop:Generator_ColumnPropNameInTable="Filename_transferColumn" msprop:Generator_UserColumnName="Filename_transfer" type="xs:string" minOccurs="0" />
+              <xs:element name="RowNum" msprop:Generator_ColumnVarNameInTable="columnRowNum" msprop:Generator_ColumnPropNameInRow="RowNum" msprop:Generator_ColumnPropNameInTable="RowNumColumn" msprop:Generator_UserColumnName="RowNum" type="xs:string" minOccurs="0" />
+              <xs:element name="Request_No" msprop:Generator_ColumnVarNameInTable="columnRequest_No" msprop:Generator_ColumnPropNameInRow="Request_No" msprop:Generator_ColumnPropNameInTable="Request_NoColumn" msprop:Generator_UserColumnName="Request_No" type="xs:string" minOccurs="0" />
+              <xs:element name="Request_No_Err" msprop:Generator_ColumnVarNameInTable="columnRequest_No_Err" msprop:Generator_ColumnPropNameInRow="Request_No_Err" msprop:Generator_ColumnPropNameInTable="Request_No_ErrColumn" msprop:Generator_UserColumnName="Request_No_Err" type="xs:string" minOccurs="0" />
+              <xs:element name="MATL_CODE" msprop:Generator_ColumnVarNameInTable="columnMATL_CODE" msprop:Generator_ColumnPropNameInRow="MATL_CODE" msprop:Generator_ColumnPropNameInTable="MATL_CODEColumn" msprop:Generator_UserColumnName="MATL_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="MATL_CODE_Err" msprop:Generator_ColumnVarNameInTable="columnMATL_CODE_Err" msprop:Generator_ColumnPropNameInRow="MATL_CODE_Err" msprop:Generator_ColumnPropNameInTable="MATL_CODE_ErrColumn" msprop:Generator_UserColumnName="MATL_CODE_Err" type="xs:string" minOccurs="0" />
+              <xs:element name="PACKAGE_NAME" msprop:Generator_ColumnVarNameInTable="columnPACKAGE_NAME" msprop:Generator_ColumnPropNameInRow="PACKAGE_NAME" msprop:Generator_ColumnPropNameInTable="PACKAGE_NAMEColumn" msprop:Generator_UserColumnName="PACKAGE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PACKAGE_NAME_Err" msprop:Generator_ColumnVarNameInTable="columnPACKAGE_NAME_Err" msprop:Generator_ColumnPropNameInRow="PACKAGE_NAME_Err" msprop:Generator_ColumnPropNameInTable="PACKAGE_NAME_ErrColumn" msprop:Generator_UserColumnName="PACKAGE_NAME_Err" type="xs:string" minOccurs="0" />
+              <xs:element name="Return_Qty" msprop:Generator_ColumnVarNameInTable="columnReturn_Qty" msprop:Generator_ColumnPropNameInRow="Return_Qty" msprop:Generator_ColumnPropNameInTable="Return_QtyColumn" msprop:Generator_UserColumnName="Return_Qty" type="xs:string" minOccurs="0" />
+              <xs:element name="Return_Qty_Err" msprop:Generator_ColumnVarNameInTable="columnReturn_Qty_Err" msprop:Generator_ColumnPropNameInRow="Return_Qty_Err" msprop:Generator_ColumnPropNameInTable="Return_Qty_ErrColumn" msprop:Generator_UserColumnName="Return_Qty_Err" type="xs:string" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

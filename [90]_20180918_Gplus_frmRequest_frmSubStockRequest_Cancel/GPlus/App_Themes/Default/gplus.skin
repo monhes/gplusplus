@@ -1,0 +1,63 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:GridView  runat="server" BackColor="#3A8FE3" GridLines="None" CellSpacing="1" CellPadding="1">
+    <HeaderStyle ForeColor="White" CssClass="GridHeader"  />
+    <AlternatingRowStyle BackColor="#FFD6E4" ForeColor="#416285" />
+    <RowStyle BackColor="#F6F6F6" ForeColor="#416285"/>
+</asp:GridView>
+
+<asp:GridView  runat="server" BackColor="#C7C6C5" GridLines="None" CellSpacing="1" CellPadding="1" SkinId="GvLong">
+    <HeaderStyle ForeColor="White" CssClass="GridHeader2"  />
+    <AlternatingRowStyle BackColor="#FFD6E4" ForeColor="#416285" />
+    <RowStyle BackColor="#F6F6F6" ForeColor="#416285"/>
+</asp:GridView>
+
+<asp:GridView  runat="server" BackColor="#C0C0BE" GridLines="None" CellSpacing="1" CellPadding="1" SkinId="GvNormal">
+    <HeaderStyle ForeColor="White" CssClass="GridHeader3"  />
+    <%--<AlternatingRowStyle BackColor="#FFD6E4" ForeColor="#416285" />--%>
+    <RowStyle BackColor="#F6F6F6" ForeColor="#416285"/>
+</asp:GridView>
+
+
+<asp:GridView SkinId="Grid2" runat="server" BackColor="#C7C6C5" GridLines="None" CellSpacing="1" CellPadding="1">
+    <HeaderStyle ForeColor="White" CssClass="GridHeader2" Font-Bold="true"   />
+    <AlternatingRowStyle BackColor="#FFD6E4" ForeColor="#416285" />
+    <RowStyle BackColor="#F6F6F6" ForeColor="#416285"/>
+</asp:GridView>
+
+<asp:Button runat="server" BackColor="Transparent" BorderStyle="None" Style="background-image: url(../Images/button.png);background-repeat:no-repeat; cursor: pointer;margin: 4px 4px 4px 4px;" Width="70" forecolor="white" 
+    Height="25" onmouseout="this.style.backgroundImage = 'url(../Images/button.png)';this.style.color = 'white';" onmouseover="this.style.backgroundImage = 'url(../Images/button_over.png)';this.style.color = '#EC467E';" />
+
+<asp:Button SkinId="ButtonNormal" runat="server" BackColor="Transparent" BorderStyle="None" Style="background-image: url(/Images/button.png);background-repeat:no-repeat; cursor: pointer;margin: 4px 4px 4px 4px;" Width="70" forecolor="white" 
+    Height="25" onmouseout="this.style.backgroundImage = 'url(/Images/button.png)';this.style.color = 'white';" onmouseover="this.style.backgroundImage = 'url(/Images/button_over.png)';this.style.color = '#EC467E';" />
+
+<asp:Button SkinId="ButtonMiddle" runat="server" BackColor="Transparent" BorderStyle="None" Style="background-image: url(../Images/button_m.png);background-repeat:no-repeat; cursor: pointer;margin: 4px 4px 4px 4px;" Width="105" forecolor="white" 
+    Height="25" onmouseout="this.style.backgroundImage = 'url(../Images/button_m.png)';this.style.color = 'white';" onmouseover="this.style.backgroundImage = 'url(../Images/button_m_over.png)';this.style.color = '#EC467E';" />
+
+<asp:Button SkinId="ButtonMiddle2" runat="server" BackColor="Transparent" BorderStyle="None" Style="background-image: url(../Images/button_m.png);background-repeat:no-repeat; cursor: pointer;margin: 4px 4px 4px 4px;" Width="105" forecolor="lightgray" 
+    Height="25" onmouseout="this.style.backgroundImage = 'url(../Images/button_m.png)';this.style.color = 'white';" onmouseover="this.style.backgroundImage = 'url(../Images/button_m_over.png)';this.style.color = '#EC467E';" />
+
+<asp:Button SkinId="ButtonMiddleLong" runat="server" BackColor="Transparent" BorderStyle="None" Style="background-image: url(../Images/button_ml.png);background-repeat:no-repeat; cursor: pointer;margin: 4px 4px 4px 4px;" Width="150" forecolor="white" 
+    Height="25" onmouseout="this.style.backgroundImage = 'url(../Images/button_ml.png)';this.style.color = 'white';" onmouseover="this.style.backgroundImage = 'url(../Images/button_ml_over.png)';this.style.color = '#EC467E';" />
+
+<asp:Button SkinId="ButtonMiddleLongLong" runat="server" BackColor="Transparent" BorderStyle="None" Style="background-image: url(../Images/button_mll.png);background-repeat:no-repeat; cursor: pointer;margin: 4px 4px 4px 4px;" Width="185" forecolor="white" 
+    Height="25" onmouseout="this.style.backgroundImage = 'url(../Images/button_mll.png)';this.style.color = 'white';" onmouseover="this.style.backgroundImage = 'url(../Images/button_mll_over.png)';this.style.color = '#EC467E';" />
+
+<asp:Button SkinId="LoginButton" runat="server" BackColor="Transparent" BorderStyle="None" Font-Size="13pt" Width="70" Height="35" forecolor="#EC467E" 
+    Style="background-image: url(Images/Login_button.png);background-repeat:no-repeat; cursor: pointer;" onmouseout="this.style.backgroundImage = 'url(Images/Login_button.png)';this.style.color = '#EC467E';"
+    onmouseover="this.style.backgroundImage = 'url(Images/Login_button_over.png)';this.style.color = 'white';" />
+
+<asp:Menu runat="server" StaticMenuItemStyle-VerticalPadding="1" StaticMenuItemStyle-ItemSpacing="1" StaticHoverStyle-ForeColor="#FF6666"></asp:Menu>
