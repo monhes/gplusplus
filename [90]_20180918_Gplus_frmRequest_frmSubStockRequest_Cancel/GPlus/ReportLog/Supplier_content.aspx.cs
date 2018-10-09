@@ -37,7 +37,8 @@ namespace GPlus.ReportLog
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                   
+                    string code_ERR2 = dr.Field<string>("SUPPLIER_CODE_Err");
+                    string code_ERR1 = dr.Field<string>("SUPPLIER_CODE_Err");
                     string code_ERR = dr.Field<string>("SUPPLIER_CODE_Err");
                     string name_ERR = dr.Field<string>("SUPPLIER_NAME_Err");
                     string stats = dr.Field<string>("Status");
@@ -52,7 +53,7 @@ namespace GPlus.ReportLog
                     status_out = (code_ERR == "" && name_ERR == "" && stats != "C") ? "เพิ่มสำเร็จ" : code_ERR + name_ERR + stats;
                     status_out = status_out.Replace("@", "" + System.Environment.NewLine);
                     
-                    dr.SetField("Supplier_Err", status_out);
+                    dr.SetField("Supplier_Err", status_out);////test commit
 
                 }
                
